@@ -1,0 +1,42 @@
+# Cache the results of Lychee to minimize the chance of rate limiting
+cache = true
+max_cache_age = "1d"
+
+# Ignore all private links (such as localhost) to avoid errors
+exclude_all_private = true
+
+# A list of accepted status codes for valid links
+accept = [
+  "200",
+  "403",
+  "429",  # HTTP status code: 429 (Too Many Requests) will also be treated as a valid link if Lychee gets rate limited
+  "307",  # HTTP status code: 307 (Temporary Redirect) will also be treated as a valid link. Some Medium blog posts require this.
+]
+
+# Improve rate limit handling
+max_retries = 6
+retry_wait_time = 10
+max_concurrency = 3
+
+# Proceed for server connections considered insecure (invalid TLS).
+insecure = true
+
+# Decrease noisy logs
+verbose = "error"
+
+# Exclude all unsupported versioned_docs
+exclude_path = [
+  "versioned_docs/version-1.3",
+  "versioned_docs/version-8.1",
+]
+
+# Explicitly exclude some URLs
+exclude = [
+  "^file:",
+  "^http(s)?://optimize.myorg",
+  "^http(s)?://identity:8084",
+  "^http(s)?://keycloak:8080",
+  "^http(s)?://keycloak:18080",
+  "^http(s)?://camunda-keycloak:18080",
+  "^http(s)?://camunda-platform-keycloak",
+]

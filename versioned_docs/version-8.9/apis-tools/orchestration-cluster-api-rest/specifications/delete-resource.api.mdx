@@ -1,0 +1,579 @@
+---
+id: delete-resource
+title: "Delete resource"
+sidebar_label: "Delete resource"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: versioned_docs/version-8.9/apis-tools/orchestration-cluster-api-rest/specifications/orchestration-cluster-api
+custom_edit_url: null
+hide_send_button: true
+---
+
+import MarkerAddedInVersion from "@site/src/mdx/MarkerAddedInVersion";
+
+import MarkerStronglyConsistentExtension from "@site/src/mdx/MarkerStronglyConsistentExtension";
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading as={"h1"} className={"openapi__heading"}>
+  {"Delete resource"} <MarkerAddedInVersion version="8.6" />
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/resources/{resourceKey}/deletion"}
+  context={"endpoint"}
+></MethodEndpoint>
+
+<MarkerStronglyConsistentExtension />
+
+Deletes a deployed resource. This can be a process definition, decision requirements
+definition, or form definition deployed using the deploy resources endpoint. Specify the
+resource you want to delete in the `resourceKey` parameter.
+
+Once a resource has been deleted it cannot be recovered. If the resource needs to be
+available again, a new deployment of the resource is required.
+
+By default, only the resource itself is deleted from the runtime state. To also delete the
+historic data associated with a resource, set the `deleteHistory` flag in the request body
+to `true`. History deletion is supported for process definitions and decision requirements
+definitions; for other resource types (forms, generic resources) the flag is ignored and no
+history is deleted.
+
+Deleting a process definition that is already draining is accepted again and changes
+nothing: the definition stays `DRAINING` until its running instances finish. The one repeated
+deletion that is rejected is one with `deleteHistory` set to `true`, because the history
+cannot be deleted before the drain finishes.
+
+The two supported types differ in how the history is removed. For a decision requirements
+definition the history is deleted asynchronously via a batch operation whose details are
+returned in the `batchOperation` field of the response. For a process definition that still
+exists in the runtime state, the definition first drains its running instances and its
+history is deleted asynchronously once the definition is fully removed cluster-wide; no batch
+operation is returned in the response. If the process definition has already been removed
+from the runtime state and the deletion is later re-triggered with `deleteHistory` set to
+`true`, a batch operation is created immediately and returned in the `batchOperation` field.
+
+<Heading id={"request"} as={"h2"} className={"openapi-tabs__heading"}>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[
+    {
+      name: "resourceKey",
+      in: "path",
+      required: true,
+      description:
+        "The key of the resource to delete.\nThis can be the key of a process definition, the key of a decision requirements\ndefinition or the key of a form definition\n",
+      schema: {
+        type: "string",
+        oneOf: [
+          {
+            description:
+              "System-generated key for a deployed process definition.",
+            format: "ProcessDefinitionKey",
+            example: "2251799813686749",
+            type: "string",
+            allOf: [
+              {
+                description:
+                  "Zeebe Engine resource key (Java long serialized as string)",
+                type: "string",
+                title: "LongKey",
+              },
+            ],
+            title: "ProcessDefinitionKey",
+          },
+          {
+            allOf: [
+              {
+                description:
+                  "Zeebe Engine resource key (Java long serialized as string)",
+                type: "string",
+                title: "LongKey",
+              },
+            ],
+            description:
+              "System-generated key for a deployed decision requirements definition.",
+            format: "DecisionRequirementsKey",
+            example: "2251799813683346",
+            type: "string",
+            title: "DecisionRequirementsKey",
+          },
+          {
+            description: "System-generated key for a deployed form.",
+            format: "FormKey",
+            example: "2251799813684365",
+            type: "string",
+            allOf: [
+              {
+                description:
+                  "Zeebe Engine resource key (Java long serialized as string)",
+                type: "string",
+                title: "LongKey",
+              },
+            ],
+            title: "FormKey",
+          },
+          {
+            description: "System-generated key for a decision definition.",
+            format: "DecisionDefinitionKey",
+            example: "2251799813326547",
+            type: "string",
+            allOf: [
+              {
+                description:
+                  "Zeebe Engine resource key (Java long serialized as string)",
+                type: "string",
+                title: "LongKey",
+              },
+            ],
+            title: "DecisionDefinitionKey",
+          },
+        ],
+        description: "The system-assigned key for this resource.",
+        format: "ResourceKey",
+        title: "ResourceKey",
+      },
+    },
+  ]}
+></ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{
+    required: false,
+    content: {
+      "application/json": {
+        schema: {
+          type: "object",
+          nullable: true,
+          properties: {
+            operationReference: {
+              description:
+                "A reference key chosen by the user that will be part of all records resulting from this operation.\nMust be > 0 if provided.\n",
+              type: "integer",
+              format: "int64",
+              minimum: 1,
+              title: "OperationReference",
+            },
+            deleteHistory: {
+              description:
+                "Indicates if the historic data associated with the resource should also be deleted\nasynchronously.\n\nThis flag is effective for process definitions and decision requirements definitions.\nFor other resource types (forms, generic resources) it is ignored and no history is\ndeleted. For a decision requirements definition the `batchOperation` field in the\nresponse carries the created batch operation. For a process definition the history is\ndeleted as part of the definition's draining/deletion lifecycle and no batch operation is\nreturned.\n",
+              type: "boolean",
+              default: false,
+            },
+          },
+          title: "DeleteResourceRequest",
+        },
+      },
+    },
+  }}
+></RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{
+    "200": {
+      description:
+        "The resource is deleted. For a process definition that is already draining, the repeated deletion is accepted without effect and the definition stays `DRAINING`.",
+      content: {
+        "application/json": {
+          schema: {
+            type: "object",
+            required: ["resourceKey", "batchOperation"],
+            properties: {
+              resourceKey: {
+                allOf: [
+                  {
+                    type: "string",
+                    oneOf: [
+                      {
+                        description:
+                          "System-generated key for a deployed process definition.",
+                        format: "ProcessDefinitionKey",
+                        example: "2251799813686749",
+                        type: "string",
+                        allOf: [
+                          {
+                            description:
+                              "Zeebe Engine resource key (Java long serialized as string)",
+                            type: "string",
+                            title: "LongKey",
+                          },
+                        ],
+                        title: "ProcessDefinitionKey",
+                      },
+                      {
+                        allOf: [
+                          {
+                            description:
+                              "Zeebe Engine resource key (Java long serialized as string)",
+                            type: "string",
+                            title: "LongKey",
+                          },
+                        ],
+                        description:
+                          "System-generated key for a deployed decision requirements definition.",
+                        format: "DecisionRequirementsKey",
+                        example: "2251799813683346",
+                        type: "string",
+                        title: "DecisionRequirementsKey",
+                      },
+                      {
+                        description:
+                          "System-generated key for a deployed form.",
+                        format: "FormKey",
+                        example: "2251799813684365",
+                        type: "string",
+                        allOf: [
+                          {
+                            description:
+                              "Zeebe Engine resource key (Java long serialized as string)",
+                            type: "string",
+                            title: "LongKey",
+                          },
+                        ],
+                        title: "FormKey",
+                      },
+                      {
+                        description:
+                          "System-generated key for a decision definition.",
+                        format: "DecisionDefinitionKey",
+                        example: "2251799813326547",
+                        type: "string",
+                        allOf: [
+                          {
+                            description:
+                              "Zeebe Engine resource key (Java long serialized as string)",
+                            type: "string",
+                            title: "LongKey",
+                          },
+                        ],
+                        title: "DecisionDefinitionKey",
+                      },
+                    ],
+                    description: "The system-assigned key for this resource.",
+                    format: "ResourceKey",
+                    title: "ResourceKey",
+                  },
+                ],
+                description:
+                  "The system-assigned key for this resource, requested to be deleted.",
+              },
+              batchOperation: {
+                nullable: true,
+                allOf: [
+                  {
+                    required: ["batchOperationKey", "batchOperationType"],
+                    description: "The created batch operation.",
+                    type: "object",
+                    properties: {
+                      batchOperationKey: {
+                        allOf: [
+                          {
+                            format: "BatchOperationKey | uuid",
+                            type: "string",
+                            description:
+                              "System-generated key for an batch operation.",
+                            example: "2251799813684321",
+                            title: "BatchOperationKey",
+                          },
+                        ],
+                        description: "Key of the batch operation.",
+                      },
+                      batchOperationType: {
+                        description: "The type of the batch operation.",
+                        type: "string",
+                        enum: [
+                          "ADD_VARIABLE",
+                          "CANCEL_PROCESS_INSTANCE",
+                          "DELETE_DECISION_DEFINITION",
+                          "DELETE_DECISION_INSTANCE",
+                          "DELETE_PROCESS_DEFINITION",
+                          "DELETE_PROCESS_INSTANCE",
+                          "MIGRATE_PROCESS_INSTANCE",
+                          "MODIFY_PROCESS_INSTANCE",
+                          "RESOLVE_INCIDENT",
+                          "UPDATE_VARIABLE",
+                        ],
+                        title: "BatchOperationTypeEnum",
+                      },
+                    },
+                    title: "BatchOperationCreatedResult",
+                  },
+                ],
+                description:
+                  "The batch operation created for asynchronously deleting the historic data.\n\nPopulated when `deleteHistory` is `true` and either the resource is a decision\nrequirements definition, or the resource is a process definition that is already fully\ndeleted from the runtime state (its history is purged directly by a batch operation).\n\nFor a process definition that still exists in the runtime state, deletion first drains\nthe definition and its history is removed asynchronously as part of that lifecycle, so no\nbatch operation is returned and this field is `null`. It is also `null` for forms and\ngeneric resources.\n",
+              },
+            },
+            title: "DeleteResourceResponse",
+          },
+        },
+      },
+    },
+    "400": {
+      description: "The provided data is not valid.",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            required: ["type", "title", "status", "detail", "instance"],
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example:
+                  "https://docs.camunda.io/api/v2.0/problem-types/bad-request",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri-reference",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+    "404": {
+      description: "The resource is not found.",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            required: ["type", "title", "status", "detail", "instance"],
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example:
+                  "https://docs.camunda.io/api/v2.0/problem-types/bad-request",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri-reference",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+    "409": {
+      description:
+        "The process definition is still draining, so its history cannot be deleted yet. Retry with `deleteHistory` set to `true` once the definition is fully deleted; the batch operation is then created immediately.",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            required: ["type", "title", "status", "detail", "instance"],
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example:
+                  "https://docs.camunda.io/api/v2.0/problem-types/bad-request",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri-reference",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+    "500": {
+      description: "An internal error occurred while processing the request.",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            required: ["type", "title", "status", "detail", "instance"],
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example:
+                  "https://docs.camunda.io/api/v2.0/problem-types/bad-request",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri-reference",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+    "503": {
+      description:
+        "The service is currently unavailable. This may happen only on some requests where the system creates backpressure to prevent the server's compute resources from being exhausted, avoiding more severe failures. In this case, the title of the error object contains `RESOURCE_EXHAUSTED`. Clients are recommended to eventually retry those requests after a backoff period. You can learn more about the backpressure mechanism here: https://docs.camunda.io/docs/components/zeebe/technical-concepts/internal-processing/#handling-backpressure .\n",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            required: ["type", "title", "status", "detail", "instance"],
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example:
+                  "https://docs.camunda.io/api/v2.0/problem-types/bad-request",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri-reference",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+  }}
+></StatusCodes>

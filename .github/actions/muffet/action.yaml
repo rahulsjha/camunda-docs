@@ -1,0 +1,70 @@
+---
+name: Validate URLs with Muffet
+
+description: |
+  Validates a page of URLs with Muffet.
+
+  Unlike most tools, Muffet will check the status of an anchor on a page, not just the page itself.
+
+inputs:
+  url_to_validate:
+    description: URL of a page containing links to check with Muffet
+    required: true
+
+  exclude_file:
+    default: ""
+    description: Path to a file of URL regexes, one per line, that Muffet should not check
+    required: false
+
+  muffet_version:
+    default: v2.10.8
+    description: Version tag of Muffet CLI tool
+    required: false
+
+runs:
+  using: composite
+  steps:
+    - name: Configure Muffet paths
+      shell: bash
+      run: |
+        echo "MUFFET_DIR=${{ runner.temp }}/muffet/${{ inputs.muffet_version }}" >> "$GITHUB_ENV"
+        echo "MUFFET_ARCHIVE=${{ runner.temp }}/muffet/${{ inputs.muffet_version }}/muffet_linux_amd64.tar.gz" >> "$GITHUB_ENV"
+    - name: Echo inputs
+      shell: bash
+      run: |
+        echo "Inputs"
+        echo "-----"
+        echo "Muffet version  : ${{ inputs.muffet_version }}"
+        echo "URL to validate : ${{ inputs.url_to_validate }}"
+    - name: Restore cache
+      uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+      id: tool-cache-muffet
+      with:
+        path: ${{ runner.temp }}/muffet/${{ inputs.muffet_version }}/muffet
+        key: ${{ runner.os }}-tool-cache-muffet-${{ inputs.muffet_version }}
+    - name: Setup Muffet
+      shell: bash
+      if: ${{ steps.tool-cache-muffet.outputs.cache-hit != 'true' }}
+      run: |-
+        mkdir -p "$MUFFET_DIR"
+        curl -sSL -o "$MUFFET_ARCHIVE" https://github.com/raviqqe/muffet/releases/download/${{ inputs.muffet_version }}/muffet_linux_amd64.tar.gz
+        tar -xvf "$MUFFET_ARCHIVE" -C "$MUFFET_DIR"
+        chmod +x "$MUFFET_DIR/muffet"
+        "$MUFFET_DIR/muffet" --version
+    - name: Add Muffet to PATH
+      shell: bash
+      run: |
+        echo "$MUFFET_DIR" >> "$GITHUB_PATH"
+
+    - name: Validate URLs
+      shell: bash
+      env:
+        EXCLUDE_FILE: ${{ inputs.exclude_file }}
+      run: |-
+        exclude_args=()
+        if [[ -n "$EXCLUDE_FILE" ]]; then
+          while IFS= read -r pattern; do
+            [[ -n "$pattern" ]] && exclude_args+=(--exclude "$pattern")
+          done < "$EXCLUDE_FILE"
+        fi
+        muffet --one-page-only --verbose "${exclude_args[@]}" ${{ inputs.url_to_validate }}

@@ -1,0 +1,104 @@
+/* stylelint-disable docusaurus/copyright-header */
+
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+.heroBanner {
+  padding: 3.5rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 966px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+/* Stack buttons on smaller screens */
+@media screen and (max-width: 720px) {
+  .buttons {
+    flex-direction: column;
+  }
+}
+
+.buttonsWrapper {
+  gap: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.features {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  width: 100%;
+}
+
+.featuresBlock {
+  padding: 2rem 0;
+}
+
+[data-theme="dark"] .featuresBlock {
+  padding: 1rem 0 2rem 0;
+}
+
+[data-theme="dark"] .featuresDescription {
+  color: rgb(198, 198, 198);
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  grid-auto-rows: 250px;
+  gap: 2.5rem;
+}
+
+.featuresSection {
+  padding: 0;
+}
+[data-theme="dark"] .featuresSection {
+  background-color: rgb(27, 27, 27);
+  border: 1px solid rgb(40, 40, 40);
+  box-shadow: 0px 8px 16px 4px rgba(0, 0, 0, 0.2);
+}
+[data-theme="dark"] .featuresSection:hover {
+  background-color: transparent;
+  border: 1px solid var(--ifm-color-primary);
+  box-shadow: 0px 8px 16px 4px rgba(120, 169, 255, 0.2);
+}
+
+.featuresImage {
+  height: 90px;
+  width: 90px;
+}
+
+img.featuresImage[alt="Agentic orchestration"] {
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.featuresTitle {
+  line-height: 1.4;
+  font-size: 24px;
+  padding: 0 2rem;
+}
+
+.featuresDescription {
+  line-height: 1.4;
+  padding: 0 2rem;
+}
+
+.featuresLink {
+  height: 250px;
+  padding-top: 1rem;
+}

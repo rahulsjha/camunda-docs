@@ -1,0 +1,496 @@
+---
+id: create-authorization
+title: "Create authorization"
+description: "<MarkerStronglyConsistentExtension />"
+sidebar_label: "Create authorization"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: versioned_docs/version-8.8/apis-tools/orchestration-cluster-api-rest/specifications/orchestration-cluster-api
+custom_edit_url: null
+hide_send_button: true
+---
+
+import MarkerStronglyConsistentExtension from "@site/src/mdx/MarkerStronglyConsistentExtension";
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create authorization"}
+></Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/authorizations"}
+  context={"endpoint"}
+></MethodEndpoint>
+
+<MarkerStronglyConsistentExtension />
+
+Create the authorization.
+
+<Heading id={"request"} as={"h2"} className={"openapi-tabs__heading"}>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails parameters={undefined}></ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{
+    content: {
+      "application/json": {
+        schema: {
+          type: "object",
+          properties: {
+            ownerId: {
+              description: "The ID of the owner of the permissions.",
+              type: "string",
+            },
+            ownerType: {
+              type: "string",
+              description: "The type of the owner of permissions.",
+              enum: [
+                "USER",
+                "CLIENT",
+                "ROLE",
+                "GROUP",
+                "MAPPING_RULE",
+                "UNSPECIFIED",
+              ],
+              title: "OwnerTypeEnum",
+            },
+            resourceId: {
+              description: "The ID of the resource to add permissions to.",
+              type: "string",
+            },
+            resourceType: {
+              description: "The type of resource to add permissions to.",
+              type: "string",
+              allOf: [
+                {
+                  description:
+                    "The type of resource to add/remove permissions to/from.",
+                  type: "string",
+                  enum: [
+                    "AUTHORIZATION",
+                    "MAPPING_RULE",
+                    "MESSAGE",
+                    "BATCH",
+                    "COMPONENT",
+                    "SYSTEM",
+                    "TENANT",
+                    "RESOURCE",
+                    "PROCESS_DEFINITION",
+                    "DECISION_REQUIREMENTS_DEFINITION",
+                    "DECISION_DEFINITION",
+                    "GROUP",
+                    "USER",
+                    "ROLE",
+                    "DOCUMENT",
+                  ],
+                  title: "ResourceTypeEnum",
+                },
+              ],
+            },
+            permissionTypes: {
+              type: "array",
+              description: "The permission types to add.",
+              items: {
+                allOf: [
+                  {
+                    description: "Specifies the type of permissions.",
+                    type: "string",
+                    enum: [
+                      "ACCESS",
+                      "CREATE",
+                      "CREATE_BATCH_OPERATION_CANCEL_PROCESS_INSTANCE",
+                      "CREATE_BATCH_OPERATION_DELETE_PROCESS_INSTANCE",
+                      "CREATE_BATCH_OPERATION_MIGRATE_PROCESS_INSTANCE",
+                      "CREATE_BATCH_OPERATION_MODIFY_PROCESS_INSTANCE",
+                      "CREATE_BATCH_OPERATION_RESOLVE_INCIDENT",
+                      "CREATE_BATCH_OPERATION_DELETE_DECISION_INSTANCE",
+                      "CREATE_BATCH_OPERATION_DELETE_DECISION_DEFINITION",
+                      "CREATE_BATCH_OPERATION_DELETE_PROCESS_DEFINITION",
+                      "CREATE_PROCESS_INSTANCE",
+                      "CREATE_DECISION_INSTANCE",
+                      "READ",
+                      "READ_PROCESS_INSTANCE",
+                      "READ_USER_TASK",
+                      "READ_DECISION_INSTANCE",
+                      "READ_PROCESS_DEFINITION",
+                      "READ_DECISION_DEFINITION",
+                      "READ_USAGE_METRIC",
+                      "UPDATE",
+                      "UPDATE_PROCESS_INSTANCE",
+                      "UPDATE_USER_TASK",
+                      "CANCEL_PROCESS_INSTANCE",
+                      "MODIFY_PROCESS_INSTANCE",
+                      "DELETE",
+                      "DELETE_PROCESS",
+                      "DELETE_DRD",
+                      "DELETE_FORM",
+                      "DELETE_RESOURCE",
+                      "DELETE_PROCESS_INSTANCE",
+                      "DELETE_DECISION_INSTANCE",
+                    ],
+                    title: "PermissionTypeEnum",
+                  },
+                ],
+              },
+            },
+          },
+          required: [
+            "ownerId",
+            "ownerType",
+            "resourceId",
+            "resourceType",
+            "permissionTypes",
+          ],
+          title: "AuthorizationRequest",
+        },
+      },
+    },
+    required: true,
+  }}
+></RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{
+    "201": {
+      description: "The authorization was created successfully.\n",
+      content: {
+        "application/json": {
+          schema: {
+            type: "object",
+            properties: {
+              authorizationKey: {
+                allOf: [
+                  {
+                    allOf: [
+                      {
+                        description:
+                          "Zeebe Engine resource key (Java long serialized as string)",
+                        type: "string",
+                        title: "LongKey",
+                      },
+                    ],
+                    description: "System-generated key for an authorization.",
+                    format: "AuthorizationKey",
+                    example: "2251799813684332",
+                    type: "string",
+                    title: "AuthorizationKey",
+                  },
+                ],
+                description: "The key of the created authorization.",
+              },
+            },
+            title: "AuthorizationCreateResult",
+          },
+        },
+      },
+    },
+    "400": {
+      description: "The provided data is not valid.",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example: "about:blank",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+    "401": {
+      description: "The request lacks valid authentication credentials.",
+      headers: { "WWW-Authenticate": { schema: { type: "string" } } },
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example: "about:blank",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+    "403": {
+      description: "Forbidden. The request is not allowed.",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example: "about:blank",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+    "404": {
+      description: "The owner was not found.\n",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example: "about:blank",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+    "500": {
+      description: "An internal error occurred while processing the request.\n",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example: "about:blank",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+    "503": {
+      description:
+        "The service is currently unavailable. This may happen only on some requests where the system creates backpressure to prevent the server's compute resources from being exhausted, avoiding more severe failures. In this case, the title of the error object contains `RESOURCE_EXHAUSTED`. Clients are recommended to eventually retry those requests after a backoff period. You can learn more about the backpressure mechanism here: https://docs.camunda.io/docs/components/zeebe/technical-concepts/internal-processing/#handling-backpressure .\n",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example: "about:blank",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+  }}
+></StatusCodes>

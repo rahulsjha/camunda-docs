@@ -1,0 +1,12 @@
+[
+  {
+    "version": "8.11 (next)",
+    "source": "docs/",
+    "suggestions": ["versioned_docs/version-8.10/"]
+  },
+  {
+    "version": "8.10 (current)",
+    "source": "versioned_docs/version-8.10/",
+    "suggestions": ["docs/"]
+  }
+]

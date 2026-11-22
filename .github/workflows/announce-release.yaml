@@ -1,0 +1,37 @@
+name: Send message to Slack when a release is published
+on:
+  release:
+    types: [published]
+  workflow_dispatch: {}
+
+jobs:
+  slack-send:
+    name: Send message to Slack
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # OIDC for the Vault JWT login
+    steps:
+      - name: Import Secrets
+        id: secrets
+        uses: hashicorp/vault-action@892a26828f195e65540a40b4768ae4571f51ebfc # v4.0.0
+        with:
+          url: ${{ secrets.VAULT_ADDR }}
+          method: jwt
+          role: ${{ secrets.VAULT_JWT_ROLE }}
+          path: ${{ secrets.VAULT_JWT_PATH }}
+          jwtGithubAudience: ${{ secrets.VAULT_JWT_AUDIENCE }}
+          exportEnv: false
+          secrets: |
+            secret/data/products/camunda-docs/ci/slack DOCS_RELEASE_BOT_WEBHOOK;
+      - id: slack
+        uses: slackapi/slack-github-action@0bc3581177d9a0f8d555e07689384b376528e8fa # v4.1.0
+        with:
+          webhook: ${{ steps.secrets.outputs.DOCS_RELEASE_BOT_WEBHOOK }}
+          webhook-type: webhook-trigger
+          payload-templated: true
+          # This data can be any valid JSON from a previous step in the GitHub Action
+          payload: |
+            {
+              "release": "${{ github.event.release.tag_name }} - ${{ github.event.release.html_url }} is going live now!"
+            }

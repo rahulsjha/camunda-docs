@@ -1,0 +1,449 @@
+---
+id: correlate-message
+title: "Correlate message"
+sidebar_label: "Correlate message"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: docs/apis-tools/orchestration-cluster-api-rest/specifications/orchestration-cluster-api
+custom_edit_url: null
+hide_send_button: true
+---
+
+import MarkerRequiredPermissions from "@site/src/mdx/MarkerRequiredPermissions";
+
+import MarkerScope from "@site/src/mdx/MarkerScope";
+
+import MarkerAddedInVersion from "@site/src/mdx/MarkerAddedInVersion";
+
+import MarkerStronglyConsistentExtension from "@site/src/mdx/MarkerStronglyConsistentExtension";
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading as={"h1"} className={"openapi__heading"}>
+  {"Correlate message"} <MarkerAddedInVersion version="8.6" />{" "}
+  <MarkerScope scope="physical-tenant" />
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/messages/correlation"}
+  context={"endpoint"}
+></MethodEndpoint>
+
+<MarkerStronglyConsistentExtension />
+
+Publishes a message and correlates it to a subscription.
+If correlation is successful it will return the first process instance key the message correlated with.
+The message is not buffered.
+Use the publish message endpoint to send messages that can be buffered.
+
+<MarkerRequiredPermissions
+  permissions={[
+    {
+      dynamic: true,
+      note: "Resolved from the matched subscription — CREATE_PROCESS_INSTANCE (start-event) or UPDATE_PROCESS_INSTANCE (intermediate) on PROCESS_DEFINITION.",
+    },
+  ]}
+/>
+
+<Heading id={"request"} as={"h2"} className={"openapi-tabs__heading"}>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails parameters={undefined}></ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{
+    required: true,
+    content: {
+      "application/json": {
+        schema: {
+          type: "object",
+          required: ["name"],
+          properties: {
+            name: {
+              description: "The message name as defined in the BPMN process\n",
+              type: "string",
+            },
+            correlationKey: {
+              description: "The correlation key of the message.",
+              type: "string",
+              example: "customer-43421",
+              default: "",
+            },
+            variables: {
+              description: "The message variables as JSON document",
+              additionalProperties: true,
+              type: "object",
+            },
+            tenantId: {
+              description: "the tenant for which the message is published",
+              allOf: [
+                {
+                  example: "customer-service",
+                  description: "The unique identifier of the tenant.",
+                  format: "TenantId",
+                  type: "string",
+                  title: "TenantId",
+                },
+              ],
+            },
+            businessId: {
+              description:
+                "An optional business id used to enforce uniqueness of the process instance that a\nmessage start event would create. If provided and uniqueness enforcement is enabled,\nthe engine rejects starting a new process instance when another root process instance\nwith the same business id is already active for the same process definition. It has no\neffect when the message correlates to a catch, boundary, or intermediate event.\n",
+              allOf: [
+                {
+                  description:
+                    "An optional, user-defined string identifier that identifies the process instance\nwithin the scope of a process definition (scoped by tenant). If provided and uniqueness\nenforcement is enabled, the engine will reject creation if another root process instance\nwith the same business id is already active for the same process definition.\nNote that any active child process instances with the same business id are not taken into account.\n",
+                  format: "BusinessId",
+                  type: "string",
+                  example: "order-12345",
+                  title: "BusinessId",
+                },
+              ],
+              "x-added-in-version": "8.10",
+            },
+          },
+          title: "MessageCorrelationRequest",
+        },
+      },
+    },
+  }}
+></RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{
+    "200": {
+      description: "The message is correlated to one or more process instances",
+      content: {
+        "application/json": {
+          schema: {
+            description:
+              "The message key of the correlated message, as well as the first process instance key it\ncorrelated with.\n",
+            type: "object",
+            required: ["tenantId", "messageKey", "processInstanceKey"],
+            properties: {
+              tenantId: {
+                description: "The tenant ID of the correlated message",
+                allOf: [
+                  {
+                    example: "customer-service",
+                    description: "The unique identifier of the tenant.",
+                    format: "TenantId",
+                    type: "string",
+                    title: "TenantId",
+                  },
+                ],
+              },
+              messageKey: {
+                allOf: [
+                  {
+                    allOf: [
+                      {
+                        description:
+                          "Zeebe Engine resource key (Java long serialized as string)",
+                        type: "string",
+                        title: "LongKey",
+                      },
+                    ],
+                    description: "System-generated key for an message.",
+                    format: "MessageKey",
+                    example: "2251799813683467",
+                    type: "string",
+                    title: "MessageKey",
+                  },
+                ],
+                description: "The key of the correlated message.",
+              },
+              processInstanceKey: {
+                allOf: [
+                  {
+                    description: "System-generated key for a process instance.",
+                    format: "ProcessInstanceKey",
+                    example: "2251799813690746",
+                    type: "string",
+                    allOf: [
+                      {
+                        description:
+                          "Zeebe Engine resource key (Java long serialized as string)",
+                        type: "string",
+                        title: "LongKey",
+                      },
+                    ],
+                    title: "ProcessInstanceKey",
+                  },
+                ],
+                description:
+                  "The key of the first process instance the message correlated with",
+              },
+            },
+            title: "MessageCorrelationResult",
+          },
+        },
+      },
+    },
+    "400": {
+      description: "The provided data is not valid.",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            required: ["type", "title", "status", "detail", "instance"],
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example:
+                  "https://docs.camunda.io/api/v2.0/problem-types/bad-request",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri-reference",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+    "403": {
+      description: "Forbidden. The request is not allowed.",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            required: ["type", "title", "status", "detail", "instance"],
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example:
+                  "https://docs.camunda.io/api/v2.0/problem-types/bad-request",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri-reference",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+    "404": {
+      description: "Not found",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            required: ["type", "title", "status", "detail", "instance"],
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example:
+                  "https://docs.camunda.io/api/v2.0/problem-types/bad-request",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri-reference",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+    "500": {
+      description: "An internal error occurred while processing the request.",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            required: ["type", "title", "status", "detail", "instance"],
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example:
+                  "https://docs.camunda.io/api/v2.0/problem-types/bad-request",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri-reference",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+    "503": {
+      description:
+        "The service is currently unavailable. This may happen only on some requests where the system creates backpressure to prevent the server's compute resources from being exhausted, avoiding more severe failures. In this case, the title of the error object contains `RESOURCE_EXHAUSTED`. Clients are recommended to eventually retry those requests after a backoff period. You can learn more about the backpressure mechanism here: https://docs.camunda.io/docs/components/zeebe/technical-concepts/internal-processing/#handling-backpressure .\n",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            required: ["type", "title", "status", "detail", "instance"],
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example:
+                  "https://docs.camunda.io/api/v2.0/problem-types/bad-request",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri-reference",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+  }}
+></StatusCodes>

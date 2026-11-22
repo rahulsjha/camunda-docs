@@ -1,0 +1,944 @@
+---
+id: search-incidents
+title: "Search incidents"
+description: "<MarkerEventuallyConsistentExtension />"
+sidebar_label: "Search incidents"
+hide_title: true
+hide_table_of_contents: true
+api: eJztPIty27aWv4LL7Z3IeyVZdpwXe9NeRWZSpbbkleSkW8ujQCQkISYBBQBt62o4sx+xX7hfsnMAkCIlSnaz7dx0R51JbROP837gHJBLR+GpdNwrp818GhCmnOuqw+dEYEU5aweO60iChT9Lx6VTdQIifUHnMMNxnSEbsqurVrfTb/cHXqf1n673wesMLptn19cw1tfr0YQLRNNN0BhLEiDO0JTeEoZ8QRURFNeHzKk6gnyJiVRveLBw3KX+kwoSOO4Eh5JUHZ8zBai6SwfP5yH1NbKHnyXgs3SkPyMRht/UYk4c1+Hjz8RXTtXBYdidOO7V5shcANGKEgnr5nhK4GeR0As8pUyDWuFb2PTh6aiFGYolQXwykUTVDBvmq5mVieDRYUgjqg5Qt4f8WEguSubhiSLicEwmXBD0N2RWVNE4VohxhcZczQA5zsgWihVVITzolmOywRNAbJMngxlBlAXkHvEJoopEEimOpMJCIaM4lE0RrAVsLA6UKTIlwqk6Ey4irMyjp8datSY4DpXjNqpORBmN4shxG0nV0QSWw4/wPcxDLI7GRBQQEUTFgiHKEGcEWb36jZgcNYq4JEl1OzdbeXlNuLjDYo2rK22+crQQweKKrDaPN2i9lASpGUGfCAsMnE/oFocx0fzVQ3NBbimPJRJEzjmDBRxNiPJnepiRewXYgP7BlDhUcpcKA3cJC6wWAhuxlSr6EhOxsHsgSTRTMx4C+c9PVmyWSlA2daoOucfRXDPq4z/bi87Ae9od3JycD86Pu6f+/fnp+yDHSy8l00mu/6QaMMb+zW4VMBa8qQP2+XYl0Db2dWqQDf9GVTBm/a9Rhv6K3G9PHa5zeGqO/Acw5AJPSc9AcPSUgsYkSemi/IKiRkguSujtc6HQhJIwKAQlCwsLgRdO1dH0l0XENR8P+5Tz1IAA3w4Ax4t6mUAZMOTKScP8z2RhQPhEylMyoYzCjlset4PV0zaTCjOfmKlECC4GAMz+fk6khBBddUhIIsKUXpv+XljrC6LNbkAjmC8VVvDzMx+bcUUY1utBp7gIyhwv0K+HQG/uZhTMyDICzEmQECtw98CiXXxp9ltO1Tn1+i2w90yf7PNMGbhQXYDmwTJQk7y/MCLKKVyamOV0CHbI9CipOhMalgYUE7zN8tSUzdydrqBduiRH+LasqkTiEO22gQnAcjGyy1CQrauuPF3EAxLWUZeFC0QDCSs250ukZlghLAgKyDzkCxLoP2JJJnFYcFYXpVq53XMxclfDvs9jpmqcjTkWAWXT2h0XN5OQ3+XEWrZzcr2eTA+0e14nALVPEZaS+1QrmuJIzajMZFd3kryRrMw8Q3iLAPUaBJPRHVUzhA1MEoATB17quKKVIdXhy07/wmu137a9U6fqXHZ+7nQ/dpyq0+6OzpsXF+3Ou5HX63V7TtV5330z6nRHPW/Qa3t9p+p4v3ity0G72xmd6aOC1yuOD5r9n7cMNU9HP3Vbo/7lm9FFr9vy+v3ieKvbOW3rrVPo3i+DXrM1GH1onl162dNW8+zMOx15Z9651xlkjy87PzU7p3oEnoz0CcapOudev99854367V+9kfdLy/NONd12m1Ov1e7nga4eANhmAaG33d75qNMdjN52LzuwSc/rdy97LS/38DpZ83APytLTIozMdOuczIwxkdpEjJApQxHXBqAwDY3GZL6z1DPY4Qd1b3fOoA20lqoVNTbN0s0LtuflfPl2i2v6it5StRgdNZ7fcDnOJ4zZBjpDKLj+HY7mFCtSUzTSlgf+amGsYRKHIcLBLQSTIHV2Pp7jMQ0pOLUyl7dx4MpIyOgMUnh51O+xr1CElT/bEPE5PLXCNIkegdnhAqS4zLZopphad7++TTaewX+05/6OfNnUkdaM+DdSn+vJlxiHNOWbSTH5LQ1IYBAuC4ol7EiqznfsAVCU/Y7AyD2VSm6FRyd6ez8WAgwh0w6zLAdnzHlIMNN7TkuStHegiURAGGLI59EcCyo5+x0omKqSM0IBXCqe3xduWELlGb/7Q2gMy2jMAftjKKTsIb3I9CGyBorZAtzbJlj5iJR8Jz7FMwY4LHBqb7X5Xlg0SrIJmKiPP2nAT12i9v8mF34wwvSV3aXg9x+dMDRbg/YHD2Jp+12vOfDSyHf2Qf964XVO2513OvJluXhpPDKjEI4sj8tD0CpS+LFUPCKiJom4pT7ZoAx2jRn9EhOkN6ITao6LKgNXCFCDFL9NJUpFk03RESh/ENoRgPoLqUhUmxIGdVcSoBuy0M4OF2jM8GgXzlcrgo+Pnx29ePXq5dHT5y9fnehD6zqe21D4lZAxQR6bUn0sljwWPtF4VN7jW4xCzqZIwukypP+E9Fkis+fBDmaccTYFHJOS40r6fFMiWEo6ZYYLVZvRYF9JgIlL5AWM2kyHS0+dXyeD7MywmZjvPjvsks/zFyevvkX5lBLx6HMKIPTQQaXkiP91cknhU7tTmTDWCgllonjVeHHy/BsWRZ6E3YJIGfEoMZRUS75ODOk5oVQMXllNZptFvPwmLaKEhHIxrDPiUWKwhaivY/1nPi5w+31a1Srl8LOnJ69efosctmiXc/UzH5tIQCc28a7mmWoTvSJbk814Y3IlCMslg7namc61oORmCuc6QztuNB5XPDMVcNPE/AOalPk6oG5RbtSIH2xcUmaUBX7HYx6bCmYB/Z21v6/YahcViisctnUmvEFLbmyT+TBmq/o6+4Yuoz6rbdbAy0v6uiORmclRUnVmWJ5zQQY7wLZZAHIk+gigyymWTqOZaEwWnAW2KDznwlh9up89gqDTWPdjpLZr07nVXJRVk3iuLUA+ZmgMP+ZzEhjlWjt35ijRLXKT3Gf9klLdtW0c2zniAk2JUikbt3aIkOk/aXMzfSjTqPpkGwS2usNkDFvl+it/mr5S1lz9CraV9lc3Wab7u/8njn0jTdkkt7hosEel9pQq59ZmmXG6a1660B3LZqy7C7rFU+h+oPUQ2f2Tr2+R7ZsY+ybGvomxb2L8q5oYuxm5o+C3rdC5rwLuq4D7KuC+CrivAu6rgPsq4L4K+P+6CtjTR2MneaAIuJqWVJ2TbdW/rMcbYIURlfri/S0Oqb4EuKX+Nxd8HJLob5t1wLXbGujCzLTJLjLnUWBvmhkHkA9f9d620KuTZy+uKzOl5tI9PLy7u6uLiV8jAVVc1LmYHoqJD/9g3kEdDWZEwKl4AWUlHATaa+MQrU66SM6JTyfUN+qqadXIgEALJagtx2S15QyXKWks6OYNFXTZa6dBfbGqReVA5+/hOrrq6I5DzG4K2p5/vhL0QxluE8k4irDI9/ALgFcA3uAAZRcsTQod52sHO28Rr6vRT4PBBTJbIJ8HZJXKWAQKsE8Kl4/NX+a6s+M+b8CbEkZfHkEvQ+R+HmJbzl0jev2olSffkr66AHEV4fv3fCwHXB9soEJ6DWVL/SYKQXMsJAkcnQobp/iVqjHHarahH1zQKV3Hv4jw4e3x4Wc+lofYoAd75l2ANbVTw7nU7I/Kzd6W6FCI4S6ItneEYzUDrPz0fR+ikcShPgTNCA6I0Ary8ePHWnM1mZS2AixLNBp7N7J3I3s38md2I083rfItF2MaBIRpI8o8ik0hcBjyO7JPIvbWv7f+P7n1Pys7OzShd66IAGsxdW3u6zvGAdS5wuwkn+KW9gR3XSvYe4S9R9h7hG/eIyRVJyJqxuG7CnMutYJjNYO9st70oWnmw8uKRNzqc8PV0olF6LjO0th14h4eLmdcqsRdwjWT5PAWlOAWC4rHoTEVGDb2n+p1yH0czgzUTX2BAYYjklLcFXCnXZkPQaBWGEt4paDn9QfoHVbkDi9MHTd7KzUF87LxslEKAaY+YvfmRRsZys0t9ZwnS0GASyoFYSb/ViD6cr0kfiyoWvRhC8PCNwQLIuC4llMsC1tD0ndw9CSnan95m1XhPg4A/TGW1H9oC5ijNQfcd2/19QtvdbnCvP17lb2ju/aSrX1zVb9KCtSsXvksvbDwiJZ/rhX/YOO62O3NNTxXzdmylmext+kcN45Pao0XteNXg6Nn7rMj9/hlvfHi6NfstV131UZcNQnLGnyFjltZQ6y8L1TWminrU5T1DcoK6WWF7bTSu1mSBWOy3XLzrY1G9pL7UaORaDc34VqN0k93lOp386INvoAIaeyiUT+yeQP2tamClcPLLDiKWYBtaZdYkRk/k8b8KVWzeFz3eXTom+nZTyplTKSTbLjUi7YONT6Popjp/IRN0z5xCvMl8g224FBD6hO407OJ2pkZQR8MMeio3vgtKI5DPj6MMGWHFoQ8bDXPLzunzdpZu+V1+l7tqN6oq3vzmjQ45AizHB720zWZa173OctVOvYHfAbHegtF7tXhPMRUv1+miV/aqLF61V7qcKHjxnXV+v4rZ7kEAJciTBJ4rK+HOe7V9SpUwF9JWqHS/uVGa2fL0FWzb93rhj6kQOs3WeEFRLOi6ftkrnbOvc5Fv4tuH+6mjO03fuCGheM6AoPrgf+7Dng1zWfti/WzpRNiNo2NlzF76ph6X4MMp6+dpQmXMA9iwmJO+lpeoGd4TEBz+qc/A7d0IwMcaaQD09LclSBW91ohhS5OYm5pPfmH1amXhzxvdDWrxjU8p0++BzFjuWA+msTM10a59vEk69ArB2g5ZAj5nEmF7NbodRkGlQO9bTrX3u17jfAdptnS+hqYCixABgb8Z6KBi5Y6ISQuemIc6ROUVNM5EGBcdLU01xJd9CTvnZ9UzQcQXPQEPl/wBCXX2UJwWrC19lUuOm5km6Y/lxp5KhVh/gKmAu6X8wE/ly561mg0UIISmJrSCkZSMQRnN02yG5V1c+33xx/R1fVBSiNM5iGph3xa+fTdMusC5SJB4qLcQBbeEvQ///XfGyM2mCWfACVksCvAMDeQdeK3uoMiAYTFEthSX12JNDsl2mCscl4s1Ex/D2aLYmrNsxIeFdRuJIMbZPXWyrqgNJbvJZ0tO3LJJIFZB8DvgEysno4yQkYk09TaD6jDGXEto41dvEZrWmoEh1YKaibW1zeupGqDdNvsdQmOsBmMZ3vSia6LUZnm+ZW8JlQNNQfuaue8k4UjR356bprWXkGZqkyGq/uENwR0dEODRjdkkQydg7wEW/+2XXqxPr9bLtULobreD260ps/jcUh9bZTUR8Z1DLC8Qf0tbmPIrL6b3W+x2CKQeku7ksx7ID133XuYqWvAmoBGhZG7Mv2pHKx2hHvf2J+hCmxdwm6t9wdrrgihljWjjxDszigjle9W3M9zPndJCBj/vXUqa1bUi+UO5w7fWttqQq6L51S6biZiPKeuu8aOCyxwJL8fsge20ncEpeuWMO3hxQXZ5eMI27BMY5GmQ/33ykEVveH3fw8WDEkVuK52Xq6rL1T+8EPK9pCoLXriuuBlRoTdVg5+zCQL89cMeSW/TZMu5Vhe5NqIUybb5ToZcVGfR6RSwjPXtce9ysFBdbVTcpBDRGvxj99n2qhfCFm39zwe2thD9pfK0FkmQ6eqF9Rt6j6iQU7HzC/dm0rl4GBN497xB5OJypAN1dCZRGqoE8OhSoP80ClJWLfmFLUpP7w9OoJNtDc0hFWhbIjc11sMuOKr+yr69zQ36JC7ckMeMrhMIQT6y2vEaAiMGir7gSwixJAlQ3jFB42qIDyAJzCbpu+81N8RpS3cJDNDNYlU/QIYPKkMs7wU/fXWRX+VwyHT7Ga+XrYybFBg+9RLI3LK8evkfwH461q2
+sidebar_class_name: "post api-method"
+info_path: versioned_docs/version-8.8/apis-tools/orchestration-cluster-api-rest/specifications/orchestration-cluster-api
+custom_edit_url: null
+hide_send_button: true
+---
+
+import MarkerEventuallyConsistentExtension from "@site/src/mdx/MarkerEventuallyConsistentExtension";
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Search incidents"}
+></Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/incidents/search"}
+  context={"endpoint"}
+></MethodEndpoint>
+
+<MarkerEventuallyConsistentExtension />
+
+Search for incidents based on given criteria.
+
+<Heading id={"request"} as={"h2"} className={"openapi-tabs__heading"}>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails parameters={undefined}></ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{
+    required: false,
+    content: {
+      "application/json": {
+        schema: {
+          type: "object",
+          allOf: [
+            {
+              type: "object",
+              properties: {
+                page: {
+                  description: "Pagination criteria.",
+                  allOf: [
+                    {
+                      description:
+                        "Pagination criteria. Can use offset-based pagination (from/limit) OR cursor-based pagination (after/before + limit), but not both.",
+                      oneOf: [
+                        {
+                          type: "object",
+                          title: "Offset-based pagination",
+                          properties: {
+                            from: {
+                              description:
+                                "The index of items to start searching from.",
+                              type: "integer",
+                              format: "int32",
+                              default: 0,
+                              minimum: 0,
+                            },
+                            limit: {
+                              description:
+                                "The maximum number of items to return in one request.",
+                              type: "integer",
+                              format: "int32",
+                              default: 100,
+                              minimum: 0,
+                            },
+                          },
+                        },
+                        {
+                          type: "object",
+                          title: "Cursor-based forward pagination",
+                          required: ["after"],
+                          properties: {
+                            after: {
+                              description:
+                                "Use the `endCursor` value from the previous response to fetch the next page of results.",
+                              allOf: [
+                                {
+                                  description:
+                                    "The end cursor in a search query result set.",
+                                  format: "base64",
+                                  type: "string",
+                                  example: "WzIyNTE3OTk4MTM2ODcxMDJd",
+                                  title: "EndCursor",
+                                },
+                              ],
+                            },
+                            limit: {
+                              description:
+                                "The maximum number of items to return in one request.",
+                              type: "integer",
+                              format: "int32",
+                              default: 100,
+                              minimum: 0,
+                            },
+                          },
+                        },
+                        {
+                          type: "object",
+                          title: "Cursor-based backward pagination",
+                          required: ["before"],
+                          properties: {
+                            before: {
+                              description:
+                                "Use the `startCursor` value from the previous response to fetch the previous page of results.",
+                              allOf: [
+                                {
+                                  description:
+                                    "The start cursor in a search query result set.",
+                                  format: "base64",
+                                  type: "string",
+                                  example: "WzIyNTE3OTk4MTM2ODcxMDJd",
+                                  title: "StartCursor",
+                                },
+                              ],
+                            },
+                            limit: {
+                              description:
+                                "The maximum number of items to return in one request.",
+                              type: "integer",
+                              format: "int32",
+                              default: 100,
+                              minimum: 0,
+                            },
+                          },
+                        },
+                      ],
+                      title: "SearchQueryPageRequest",
+                    },
+                  ],
+                  type: "object",
+                },
+              },
+              title: "SearchQueryRequest",
+            },
+          ],
+          properties: {
+            sort: {
+              description: "Sort field criteria.",
+              type: "array",
+              items: {
+                type: "object",
+                properties: {
+                  field: {
+                    description: "The field to sort by.",
+                    type: "string",
+                    enum: [
+                      "incidentKey",
+                      "processDefinitionKey",
+                      "processDefinitionId",
+                      "processInstanceKey",
+                      "errorType",
+                      "errorMessage",
+                      "elementId",
+                      "elementInstanceKey",
+                      "creationTime",
+                      "state",
+                      "jobKey",
+                      "tenantId",
+                    ],
+                  },
+                  order: {
+                    description:
+                      "The order in which to sort the related field.",
+                    type: "string",
+                    enum: ["ASC", "DESC"],
+                    default: "ASC",
+                    title: "SortOrderEnum",
+                  },
+                },
+                required: ["field"],
+                title: "IncidentSearchQuerySortRequest",
+              },
+            },
+            filter: {
+              description: "The incident search filters.",
+              allOf: [
+                {
+                  description: "Incident search filter.",
+                  type: "object",
+                  properties: {
+                    processDefinitionId: {
+                      allOf: [
+                        {
+                          description:
+                            "Id of a process definition, from the model. Only ids of process definitions that are deployed are useful.",
+                          format: "ProcessDefinitionId",
+                          type: "string",
+                          example: "new-account-onboarding-workflow",
+                          title: "ProcessDefinitionId",
+                        },
+                      ],
+                      description:
+                        "The process definition ID associated to this incident.",
+                    },
+                    errorType: {
+                      type: "string",
+                      description:
+                        "Incident error type with a defined set of values.",
+                      enum: [
+                        "UNSPECIFIED",
+                        "UNKNOWN",
+                        "IO_MAPPING_ERROR",
+                        "JOB_NO_RETRIES",
+                        "EXECUTION_LISTENER_NO_RETRIES",
+                        "TASK_LISTENER_NO_RETRIES",
+                        "AD_HOC_SUB_PROCESS_NO_RETRIES",
+                        "CONDITION_ERROR",
+                        "EXTRACT_VALUE_ERROR",
+                        "CALLED_ELEMENT_ERROR",
+                        "UNHANDLED_ERROR_EVENT",
+                        "MESSAGE_SIZE_EXCEEDED",
+                        "CALLED_DECISION_ERROR",
+                        "DECISION_EVALUATION_ERROR",
+                        "FORM_NOT_FOUND",
+                        "RESOURCE_NOT_FOUND",
+                      ],
+                    },
+                    errorMessage: {
+                      type: "string",
+                      description:
+                        "Error message which describes the error in more detail.",
+                    },
+                    elementId: {
+                      description:
+                        "The element ID associated to this incident.",
+                      allOf: [
+                        {
+                          description: "The model-defined id of an element.",
+                          format: "ElementId",
+                          type: "string",
+                          example: "Activity_106kosb",
+                          title: "ElementId",
+                        },
+                      ],
+                    },
+                    creationTime: {
+                      allOf: [
+                        {
+                          description:
+                            "Date-time property with full advanced search capabilities.",
+                          type: "object",
+                          oneOf: [
+                            {
+                              type: "string",
+                              format: "date-time",
+                              title: "Exact match",
+                              description: "Matches the value exactly.",
+                            },
+                            {
+                              title: "Advanced filter",
+                              description: "Advanced date-time filter.",
+                              type: "object",
+                              properties: {
+                                $eq: {
+                                  description:
+                                    "Checks for equality with the provided value.",
+                                  type: "string",
+                                  format: "date-time",
+                                },
+                                $neq: {
+                                  description:
+                                    "Checks for inequality with the provided value.",
+                                  type: "string",
+                                  format: "date-time",
+                                },
+                                $exists: {
+                                  description:
+                                    "Checks if the current property exists.",
+                                  type: "boolean",
+                                },
+                                $gt: {
+                                  description:
+                                    "Greater than comparison with the provided value.",
+                                  type: "string",
+                                  format: "date-time",
+                                },
+                                $gte: {
+                                  description:
+                                    "Greater than or equal comparison with the provided value.",
+                                  type: "string",
+                                  format: "date-time",
+                                },
+                                $lt: {
+                                  description:
+                                    "Lower than comparison with the provided value.",
+                                  type: "string",
+                                  format: "date-time",
+                                },
+                                $lte: {
+                                  description:
+                                    "Lower than or equal comparison with the provided value.",
+                                  type: "string",
+                                  format: "date-time",
+                                },
+                                $in: {
+                                  description:
+                                    "Checks if the property matches any of the provided values.",
+                                  type: "array",
+                                  items: {
+                                    type: "string",
+                                    format: "date-time",
+                                  },
+                                },
+                              },
+                            },
+                          ],
+                          title: "DateTimeFilterProperty",
+                        },
+                      ],
+                      description: "Date of incident creation.",
+                    },
+                    state: {
+                      type: "string",
+                      description:
+                        "State of this incident with a defined set of values.",
+                      enum: ["ACTIVE", "MIGRATED", "RESOLVED", "PENDING"],
+                    },
+                    tenantId: {
+                      description: "The tenant ID of the incident.",
+                      allOf: [
+                        {
+                          example: "customer-service",
+                          description: "The unique identifier of the tenant.",
+                          format: "TenantId",
+                          type: "string",
+                          title: "TenantId",
+                        },
+                      ],
+                    },
+                    incidentKey: {
+                      allOf: [
+                        {
+                          description: "System-generated key for a incident.",
+                          format: "IncidentKey",
+                          example: "2251799813689432",
+                          type: "string",
+                          allOf: [
+                            {
+                              description:
+                                "Zeebe Engine resource key (Java long serialized as string)",
+                              type: "string",
+                              title: "LongKey",
+                            },
+                          ],
+                          title: "IncidentKey",
+                        },
+                      ],
+                      description:
+                        "The assigned key, which acts as a unique identifier for this incident.",
+                    },
+                    processDefinitionKey: {
+                      allOf: [
+                        {
+                          description:
+                            "System-generated key for a deployed process definition.",
+                          format: "ProcessDefinitionKey",
+                          example: "2251799813686749",
+                          type: "string",
+                          allOf: [
+                            {
+                              description:
+                                "Zeebe Engine resource key (Java long serialized as string)",
+                              type: "string",
+                              title: "LongKey",
+                            },
+                          ],
+                          title: "ProcessDefinitionKey",
+                        },
+                      ],
+                      description:
+                        "The process definition key associated to this incident.",
+                    },
+                    processInstanceKey: {
+                      allOf: [
+                        {
+                          description:
+                            "System-generated key for a process instance.",
+                          format: "ProcessInstanceKey",
+                          example: "2251799813690746",
+                          type: "string",
+                          allOf: [
+                            {
+                              description:
+                                "Zeebe Engine resource key (Java long serialized as string)",
+                              type: "string",
+                              title: "LongKey",
+                            },
+                          ],
+                          title: "ProcessInstanceKey",
+                        },
+                      ],
+                      description:
+                        "The process instance key associated to this incident.",
+                    },
+                    elementInstanceKey: {
+                      allOf: [
+                        {
+                          description:
+                            "System-generated key for a element instance.",
+                          format: "ElementInstanceKey",
+                          example: "2251799813686789",
+                          type: "string",
+                          allOf: [
+                            {
+                              description:
+                                "Zeebe Engine resource key (Java long serialized as string)",
+                              type: "string",
+                              title: "LongKey",
+                            },
+                          ],
+                          title: "ElementInstanceKey",
+                        },
+                      ],
+                      description:
+                        "The element instance key associated to this incident.",
+                    },
+                    jobKey: {
+                      allOf: [
+                        {
+                          description: "System-generated key for a job.",
+                          format: "JobKey",
+                          example: "2251799813653498",
+                          type: "string",
+                          allOf: [
+                            {
+                              description:
+                                "Zeebe Engine resource key (Java long serialized as string)",
+                              type: "string",
+                              title: "LongKey",
+                            },
+                          ],
+                          title: "JobKey",
+                        },
+                      ],
+                      description:
+                        "The job key, if exists, associated with this incident.",
+                    },
+                  },
+                  title: "IncidentFilter",
+                },
+              ],
+            },
+          },
+          title: "IncidentSearchQuery",
+        },
+      },
+    },
+  }}
+></RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{
+    "200": {
+      description: "The incident search result.\n",
+      content: {
+        "application/json": {
+          schema: {
+            type: "object",
+            allOf: [
+              {
+                type: "object",
+                required: ["page"],
+                properties: {
+                  page: {
+                    description:
+                      "Pagination information about the search results.",
+                    allOf: [
+                      {
+                        description:
+                          "Pagination information about the search results.",
+                        type: "object",
+                        required: ["totalItems"],
+                        properties: {
+                          totalItems: {
+                            description: "Total items matching the criteria.",
+                            type: "integer",
+                            format: "int64",
+                            example: 1,
+                          },
+                          hasMoreTotalItems: {
+                            description:
+                              "Indicates if more results exist beyond the reported totalItems value. Due to system limitations, the totalItems value can be capped.\n",
+                            type: "boolean",
+                            example: false,
+                          },
+                          startCursor: {
+                            description:
+                              "The cursor value for getting the previous page of results. Use this in the `before` field of an ensuing request.",
+                            allOf: [
+                              {
+                                description:
+                                  "The start cursor in a search query result set.",
+                                format: "base64",
+                                type: "string",
+                                example: "WzIyNTE3OTk4MTM2ODcxMDJd",
+                                title: "StartCursor",
+                              },
+                            ],
+                          },
+                          endCursor: {
+                            description:
+                              "The cursor value for getting the next page of results. Use this in the `after` field of an ensuing request.",
+                            allOf: [
+                              {
+                                description:
+                                  "The end cursor in a search query result set.",
+                                format: "base64",
+                                type: "string",
+                                example: "WzIyNTE3OTk4MTM2ODcxMDJd",
+                                title: "EndCursor",
+                              },
+                            ],
+                          },
+                        },
+                        example: { totalItems: 1, hasMoreTotalItems: false },
+                        title: "SearchQueryPageResponse",
+                      },
+                    ],
+                  },
+                },
+                title: "SearchQueryResponse",
+              },
+            ],
+            properties: {
+              items: {
+                description: "The matching incidents.",
+                type: "array",
+                items: {
+                  type: "object",
+                  properties: {
+                    processDefinitionId: {
+                      allOf: [
+                        {
+                          description:
+                            "Id of a process definition, from the model. Only ids of process definitions that are deployed are useful.",
+                          format: "ProcessDefinitionId",
+                          type: "string",
+                          example: "new-account-onboarding-workflow",
+                          title: "ProcessDefinitionId",
+                        },
+                      ],
+                      description:
+                        "The process definition ID associated to this incident.",
+                    },
+                    errorType: {
+                      type: "string",
+                      description:
+                        "Incident error type with a defined set of values.",
+                      enum: [
+                        "UNSPECIFIED",
+                        "UNKNOWN",
+                        "IO_MAPPING_ERROR",
+                        "JOB_NO_RETRIES",
+                        "EXECUTION_LISTENER_NO_RETRIES",
+                        "TASK_LISTENER_NO_RETRIES",
+                        "AD_HOC_SUB_PROCESS_NO_RETRIES",
+                        "CONDITION_ERROR",
+                        "EXTRACT_VALUE_ERROR",
+                        "CALLED_ELEMENT_ERROR",
+                        "UNHANDLED_ERROR_EVENT",
+                        "MESSAGE_SIZE_EXCEEDED",
+                        "CALLED_DECISION_ERROR",
+                        "DECISION_EVALUATION_ERROR",
+                        "FORM_NOT_FOUND",
+                        "RESOURCE_NOT_FOUND",
+                      ],
+                    },
+                    errorMessage: {
+                      type: "string",
+                      description:
+                        "Error message which describes the error in more detail.",
+                    },
+                    elementId: {
+                      description:
+                        "The element ID associated to this incident.",
+                      allOf: [
+                        {
+                          description: "The model-defined id of an element.",
+                          format: "ElementId",
+                          type: "string",
+                          example: "Activity_106kosb",
+                          title: "ElementId",
+                        },
+                      ],
+                    },
+                    creationTime: {
+                      type: "string",
+                      description: "Date of incident creation.",
+                      format: "date-time",
+                    },
+                    state: {
+                      type: "string",
+                      description:
+                        "State of this incident with a defined set of values.",
+                      enum: ["ACTIVE", "MIGRATED", "RESOLVED", "PENDING"],
+                    },
+                    tenantId: {
+                      description: "The tenant ID of the incident.",
+                      allOf: [
+                        {
+                          example: "customer-service",
+                          description: "The unique identifier of the tenant.",
+                          format: "TenantId",
+                          type: "string",
+                          title: "TenantId",
+                        },
+                      ],
+                    },
+                    incidentKey: {
+                      allOf: [
+                        {
+                          description: "System-generated key for a incident.",
+                          format: "IncidentKey",
+                          example: "2251799813689432",
+                          type: "string",
+                          allOf: [
+                            {
+                              description:
+                                "Zeebe Engine resource key (Java long serialized as string)",
+                              type: "string",
+                              title: "LongKey",
+                            },
+                          ],
+                          title: "IncidentKey",
+                        },
+                      ],
+                      description:
+                        "The assigned key, which acts as a unique identifier for this incident.",
+                    },
+                    processDefinitionKey: {
+                      allOf: [
+                        {
+                          description:
+                            "System-generated key for a deployed process definition.",
+                          format: "ProcessDefinitionKey",
+                          example: "2251799813686749",
+                          type: "string",
+                          allOf: [
+                            {
+                              description:
+                                "Zeebe Engine resource key (Java long serialized as string)",
+                              type: "string",
+                              title: "LongKey",
+                            },
+                          ],
+                          title: "ProcessDefinitionKey",
+                        },
+                      ],
+                      description:
+                        "The process definition key associated to this incident.",
+                    },
+                    processInstanceKey: {
+                      allOf: [
+                        {
+                          description:
+                            "System-generated key for a process instance.",
+                          format: "ProcessInstanceKey",
+                          example: "2251799813690746",
+                          type: "string",
+                          allOf: [
+                            {
+                              description:
+                                "Zeebe Engine resource key (Java long serialized as string)",
+                              type: "string",
+                              title: "LongKey",
+                            },
+                          ],
+                          title: "ProcessInstanceKey",
+                        },
+                      ],
+                      description:
+                        "The process instance key associated to this incident.",
+                    },
+                    elementInstanceKey: {
+                      allOf: [
+                        {
+                          description:
+                            "System-generated key for a element instance.",
+                          format: "ElementInstanceKey",
+                          example: "2251799813686789",
+                          type: "string",
+                          allOf: [
+                            {
+                              description:
+                                "Zeebe Engine resource key (Java long serialized as string)",
+                              type: "string",
+                              title: "LongKey",
+                            },
+                          ],
+                          title: "ElementInstanceKey",
+                        },
+                      ],
+                      description:
+                        "The element instance key associated to this incident.",
+                    },
+                    jobKey: {
+                      allOf: [
+                        {
+                          description: "System-generated key for a job.",
+                          format: "JobKey",
+                          example: "2251799813653498",
+                          type: "string",
+                          allOf: [
+                            {
+                              description:
+                                "Zeebe Engine resource key (Java long serialized as string)",
+                              type: "string",
+                              title: "LongKey",
+                            },
+                          ],
+                          title: "JobKey",
+                        },
+                      ],
+                      description:
+                        "The job key, if exists, associated with this incident.",
+                    },
+                  },
+                  title: "IncidentResult",
+                },
+              },
+            },
+            title: "IncidentSearchQueryResult",
+          },
+        },
+      },
+    },
+    "400": {
+      description: "The provided data is not valid.",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example: "about:blank",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+    "401": {
+      description: "The request lacks valid authentication credentials.",
+      headers: { "WWW-Authenticate": { schema: { type: "string" } } },
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example: "about:blank",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+    "403": {
+      description: "Forbidden. The request is not allowed.",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example: "about:blank",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+    "500": {
+      description: "An internal error occurred while processing the request.\n",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example: "about:blank",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+  }}
+></StatusCodes>

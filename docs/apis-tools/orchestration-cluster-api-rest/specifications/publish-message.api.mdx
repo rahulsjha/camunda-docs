@@ -1,0 +1,332 @@
+---
+id: publish-message
+title: "Publish message"
+sidebar_label: "Publish message"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: docs/apis-tools/orchestration-cluster-api-rest/specifications/orchestration-cluster-api
+custom_edit_url: null
+hide_send_button: true
+---
+
+import MarkerRequiredPermissions from "@site/src/mdx/MarkerRequiredPermissions";
+
+import MarkerScope from "@site/src/mdx/MarkerScope";
+
+import MarkerAddedInVersion from "@site/src/mdx/MarkerAddedInVersion";
+
+import MarkerStronglyConsistentExtension from "@site/src/mdx/MarkerStronglyConsistentExtension";
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading as={"h1"} className={"openapi__heading"}>
+  {"Publish message"} <MarkerAddedInVersion version="8.6" />{" "}
+  <MarkerScope scope="physical-tenant" />
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/messages/publication"}
+  context={"endpoint"}
+></MethodEndpoint>
+
+<MarkerStronglyConsistentExtension />
+
+Publishes a single message.
+Messages are published to specific partitions computed from their correlation keys.
+Messages can be buffered.
+The endpoint does not wait for a correlation result.
+Use the message correlation endpoint for such use cases.
+
+<MarkerRequiredPermissions
+  permissions={[{ resourceType: "MESSAGE", permissionType: "CREATE" }]}
+/>
+
+<Heading id={"request"} as={"h2"} className={"openapi-tabs__heading"}>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails parameters={undefined}></ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{
+    required: true,
+    content: {
+      "application/json": {
+        schema: {
+          type: "object",
+          properties: {
+            name: { description: "The name of the message.", type: "string" },
+            correlationKey: {
+              description: "The correlation key of the message.",
+              type: "string",
+              example: "customer-43421",
+              default: "",
+            },
+            timeToLive: {
+              description:
+                "Timespan (in ms) to buffer the message on the broker.",
+              type: "integer",
+              format: "int64",
+              default: 0,
+            },
+            messageId: {
+              description:
+                "The unique ID of the message. This is used to ensure only one message with the given ID\nwill be published during the lifetime of the message (if `timeToLive` is set).\n",
+              type: "string",
+            },
+            variables: {
+              description: "The message variables as JSON document.",
+              additionalProperties: true,
+              type: "object",
+            },
+            tenantId: {
+              description: "The tenant of the message sender.",
+              allOf: [
+                {
+                  example: "customer-service",
+                  description: "The unique identifier of the tenant.",
+                  format: "TenantId",
+                  type: "string",
+                  title: "TenantId",
+                },
+              ],
+            },
+            businessId: {
+              description:
+                "An optional business id used to enforce uniqueness of the process instance that a\nmessage start event would create. If provided and uniqueness enforcement is enabled,\nthe engine rejects starting a new process instance when another root process instance\nwith the same business id is already active for the same process definition. It has no\neffect when the message correlates to a catch, boundary, or intermediate event.\n",
+              allOf: [
+                {
+                  description:
+                    "An optional, user-defined string identifier that identifies the process instance\nwithin the scope of a process definition (scoped by tenant). If provided and uniqueness\nenforcement is enabled, the engine will reject creation if another root process instance\nwith the same business id is already active for the same process definition.\nNote that any active child process instances with the same business id are not taken into account.\n",
+                  format: "BusinessId",
+                  type: "string",
+                  example: "order-12345",
+                  title: "BusinessId",
+                },
+              ],
+              "x-added-in-version": "8.10",
+            },
+          },
+          required: ["name"],
+          title: "MessagePublicationRequest",
+        },
+      },
+    },
+  }}
+></RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{
+    "200": {
+      description: "The message was published.",
+      content: {
+        "application/json": {
+          schema: {
+            description: "The message key of the published message.",
+            type: "object",
+            required: ["tenantId", "messageKey"],
+            properties: {
+              tenantId: {
+                description: "The tenant ID of the message.",
+                allOf: [
+                  {
+                    example: "customer-service",
+                    description: "The unique identifier of the tenant.",
+                    format: "TenantId",
+                    type: "string",
+                    title: "TenantId",
+                  },
+                ],
+              },
+              messageKey: {
+                allOf: [
+                  {
+                    allOf: [
+                      {
+                        description:
+                          "Zeebe Engine resource key (Java long serialized as string)",
+                        type: "string",
+                        title: "LongKey",
+                      },
+                    ],
+                    description: "System-generated key for an message.",
+                    format: "MessageKey",
+                    example: "2251799813683467",
+                    type: "string",
+                    title: "MessageKey",
+                  },
+                ],
+                description: "The key of the published message.",
+              },
+            },
+            title: "MessagePublicationResult",
+          },
+        },
+      },
+    },
+    "400": {
+      description: "The provided data is not valid.",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            required: ["type", "title", "status", "detail", "instance"],
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example:
+                  "https://docs.camunda.io/api/v2.0/problem-types/bad-request",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri-reference",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+    "500": {
+      description: "An internal error occurred while processing the request.",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            required: ["type", "title", "status", "detail", "instance"],
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example:
+                  "https://docs.camunda.io/api/v2.0/problem-types/bad-request",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri-reference",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+    "503": {
+      description:
+        "The service is currently unavailable. This may happen only on some requests where the system creates backpressure to prevent the server's compute resources from being exhausted, avoiding more severe failures. In this case, the title of the error object contains `RESOURCE_EXHAUSTED`. Clients are recommended to eventually retry those requests after a backoff period. You can learn more about the backpressure mechanism here: https://docs.camunda.io/docs/components/zeebe/technical-concepts/internal-processing/#handling-backpressure .\n",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            required: ["type", "title", "status", "detail", "instance"],
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example:
+                  "https://docs.camunda.io/api/v2.0/problem-types/bad-request",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri-reference",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+  }}
+></StatusCodes>

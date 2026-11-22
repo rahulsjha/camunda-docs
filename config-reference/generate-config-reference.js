@@ -1,0 +1,314 @@
+const { execSync } = require("child_process");
+const camundaSpringBootStarter = require("./camunda-spring-boot-starter/generation-strategy");
+const fs = require("fs");
+const mustache = require("mustache");
+const { config } = require("process");
+const configRefStrategies = {
+  "camunda-spring-boot-starter": camundaSpringBootStarter,
+};
+
+const typeReplacements = {
+  "java.lang.String": "string",
+  "java.nio.file.Path": "file",
+  "java.time.Duration": "duration",
+  "io.camunda.client.spring.properties.CamundaClientAuthProperties$AuthMethod":
+    "enum[none, basic, oidc]",
+  "java.net.URI": "url",
+  "java.lang.Boolean": "boolean",
+  "java.lang.Integer": "integer",
+  "java.lang.Double": "double",
+  "java.lang.Long": "long",
+  "org.springframework.util.unit.DataSize": "dataSize",
+  "io.camunda.client.spring.properties.CamundaClientProperties$ClientMode":
+    "enum[self-managed, saas]",
+  "java.util.List<java.lang.String>": "array[string]",
+  "java.net.URL": "url",
+  "org.springframework.boot.actuate.endpoint.Access":
+    "enum[none, read_only, unrestricted]",
+  "io.camunda.client.api.command.enums.TenantFilter":
+    "enum[assigned, provided]",
+  "java.util.Set<java.lang.Integer>": "array[integer]",
+  "java.util.Map<java.lang.String,java.lang.Object>": "map[string,object]",
+  "java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.Object>>":
+    "map[string,map[string,object]]",
+  "java.util.Map": "map[string,object]",
+  "java.lang.Object": "object",
+  "io.camunda.client.api.search.enums.ClusterVariableKind":
+    "enum[json, secretReference]",
+};
+
+const preserveGroups = [];
+const preserveDeprecatedGroups = [
+  "camunda.client.zeebe.override",
+  "zeebe.client.worker.override",
+];
+
+const command = process.argv[2];
+console.log(`Running ${command}`);
+
+// API name must be passed in as an arg.
+const configRefStrategyName = process.argv[3];
+if (configRefStrategyName === undefined) {
+  const validConfigReferences = Object.keys(configRefStrategies).join(", ");
+  console.log(
+    `Please specify a config reference name. Valid names: ${validConfigReferences}`
+  );
+  process.exit();
+}
+
+// The API name must be recognized.
+const strategy = configRefStrategies[configRefStrategyName];
+if (strategy === undefined) {
+  const validConfigReferences = Object.keys(configRefStrategies).join(", ");
+  console.error(
+    `Invalid config reference name ${validConfigReferences}. Valid names: ${validConfigReferences}`
+  );
+  process.exit();
+}
+
+// Version is an optional argument. If not provided, we assume "vNext".
+const requestedVersion = process.argv[4];
+
+const generationConfig = {
+  version: requestedVersion,
+  outputDir: strategy.getOutputDir(requestedVersion),
+  metadata: strategy.getMetadata(requestedVersion),
+  filename: strategy.getFilename(requestedVersion),
+  componentName: strategy.componentName,
+  useHelm: strategy.useHelm || false,
+  baseDir: strategy.baseDir,
+  additionalProperties: strategy.getAdditionalProperties(requestedVersion),
+};
+
+const template = fs.readFileSync(
+  require.resolve("./configuration-reference.mustache"),
+  { encoding: "utf8" }
+);
+
+if (requestedVersion === undefined) {
+  console.log(`Generating config reference for ${configRefStrategyName}`);
+} else {
+  console.log(
+    `Generating config reference for ${configRefStrategyName} for version ${requestedVersion}`
+  );
+}
+
+const cleanConfigReference = (config) => {
+  console.log(
+    `Cleaning config reference output file: ${config.outputDir}/${config.filename}`
+  );
+  if (fs.existsSync(config.outputDir)) {
+    fs.rmSync(`${config.outputDir}/${config.filename}`, {
+      recursive: true,
+      force: true,
+    });
+  }
+  fs.mkdirSync(config.outputDir, { recursive: true });
+};
+
+const generateConfigReference = (config) => {
+  console.log(
+    `Generating config reference: ${config.outputDir}/${config.filename}`
+  );
+  config.metadata.groups
+    .filter((group) => group.type === "java.util.Map")
+    .forEach((group) => {
+      console.log(
+        `Group ${group.name} has type map and requires custom mapping`
+      );
+    });
+  const metadata = {
+    componentName: config.componentName,
+    useHelm: config.useHelm,
+    groups: config.metadata.groups
+      .map((group) => {
+        const properties = config.metadata.properties
+          .filter((property) => property.deprecation === undefined)
+          .filter((property) => property.sourceType === group.type)
+          .filter((property) => property.name.startsWith(group.name));
+        return {
+          group,
+          properties,
+        };
+      })
+      .filter(
+        (group) =>
+          group.properties.length > 0 ||
+          preserveGroups.includes(group.group.name)
+      )
+      .map((group) => {
+        group.table = group.properties.length > 0;
+        return group;
+      }),
+    deprecatedGroups: config.metadata.groups
+      .map((group) => {
+        const properties = config.metadata.properties
+          .filter((property) => property.deprecation)
+          .filter((property) => property.sourceType === group.type);
+        const clonedGroup = JSON.parse(JSON.stringify(group));
+        if (clonedGroup.description) {
+          if (clonedGroup.description.startsWith("Zeebe")) {
+          } else if (clonedGroup.description.startsWith("Keycloak")) {
+          } else {
+            clonedGroup.description =
+              clonedGroup.description.charAt(0).toLowerCase() +
+              clonedGroup.description.slice(1);
+          }
+        }
+        return {
+          group: clonedGroup,
+          properties,
+        };
+      })
+      .filter(
+        (group) =>
+          group.properties.length > 0 ||
+          preserveDeprecatedGroups.includes(group.group.name)
+      )
+      .map((group) => {
+        group.table = group.properties.length > 0;
+        return group;
+      }),
+  };
+  const output = mustache.render(template, metadata);
+  fs.writeFileSync(`${config.outputDir}/${config.filename}`, output);
+  console.log(
+    `Config reference generated: ${config.outputDir}/${config.filename}`
+  );
+};
+
+const runCommand = (command) => {
+  const result = execSync(command, { stdio: "inherit" });
+  return result;
+};
+
+const preGenerateDocs = (config) => {
+  // move map properties to the groups
+  const complexProperties = config.metadata.properties.filter(
+    (property) =>
+      property.type.startsWith("java.util.Map") ||
+      (property.type.startsWith("java.util.List") &&
+        typeReplacements[property.type] === undefined)
+  );
+  console.log(`Found ${complexProperties.length} complex properties`);
+  complexProperties.forEach((property) => {
+    console.log(`Handling complex property ${property.name}`);
+    const properties = config.additionalProperties.properties?.filter(
+      (p) => p.name === property.name
+    )[0];
+    if (typeof properties === "undefined") {
+      console.log(`No additional properties found for ${property.name}`);
+      return;
+    }
+    config.metadata.properties.splice(
+      config.metadata.properties.indexOf(property),
+      1
+    );
+    config.metadata.properties.push(...properties.properties);
+    config.metadata.groups.push({
+      name: properties.name,
+      type: properties.sourceType,
+      description: property.description,
+      sourceType: property.sourceType,
+    });
+  });
+
+  config.metadata.groups.forEach((group) => {
+    if (group.description) {
+      group.description = group.description
+        .replaceAll(/<p>/g, "\n\n")
+        .replaceAll(/<code> /g, "`")
+        .replaceAll(/<code>/g, "`")
+        .replaceAll(/ <\/code>/g, "`")
+        .replaceAll(/<\/code>/g, "`")
+        .replaceAll(/<br>/g, "\n");
+    }
+  });
+
+  config.metadata.properties.forEach((property) => {
+    if (property.type in typeReplacements) {
+      property.type = typeReplacements[property.type];
+    } else {
+      console.log("No type replacement for " + property.type);
+      process.exit(1);
+    }
+    property.defaultValue = JSON.stringify(property.defaultValue);
+    if (property.defaultValue === undefined) {
+      property.defaultValue = "null";
+    }
+    if (property.description) {
+      property.description = property.description
+        .replaceAll(/<p>/g, "\n\n")
+        .replaceAll(/<code> /g, "`")
+        .replaceAll(
+          /\{@(?:link #|code )([^}]+)\}/g,
+          (_, prop) =>
+            "`" + prop.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase() + "`"
+        )
+        .replaceAll(/<code>/g, "`")
+        .replaceAll(/ <\/code>/g, "`")
+        .replaceAll(/<\/code>/g, "`")
+        .replaceAll(/<br>/g, "\n");
+    }
+    property.env = property.name
+      .toUpperCase()
+      .replaceAll(/\./g, "_")
+      .replaceAll(/-/g, "");
+    property.anchor = property.name
+      .replaceAll(/\./g, "")
+      .replaceAll(/-/g, "")
+      .replaceAll(/\{/g, "")
+      .replaceAll(/\}/g, "")
+      .replaceAll(/\</g, "")
+      .replaceAll(/\>/g, "")
+      .replaceAll(/\|/g, "");
+    if (property.deprecation && property.deprecation.replacement) {
+      property.deprecation.replacementEnv = property.deprecation.replacement
+        .toUpperCase()
+        .replaceAll(/\./g, "_")
+        .replaceAll(/-/g, "");
+      property.deprecation.replacementAnchor = property.deprecation.replacement
+        .replaceAll(/\./g, "")
+        .replaceAll(/-/g, "")
+        .replaceAll(/\{/g, "")
+        .replaceAll(/\}/g, "")
+        .replaceAll(/\</g, "")
+        .replaceAll(/\>/g, "")
+        .replaceAll(/\|/g, "");
+    }
+  });
+};
+const postGenerateDocs = (config) => {};
+// All APIs will execute these same steps, with custom-per-API steps
+//   implemented by each API's generation-strategy.js.
+const steps = {
+  generate: [
+    // Remove old docs
+    () => cleanConfigReference(generationConfig),
+
+    // Run any custom steps before generation
+    () => preGenerateDocs(generationConfig),
+    () => strategy.preGenerateDocs(generationConfig),
+
+    // Generate the docs
+    () => generateConfigReference(generationConfig),
+
+    // Run any custom steps after generation
+    () => postGenerateDocs(generationConfig),
+    () => strategy.postGenerateDocs(generationConfig),
+
+    // Run prettier against the generated docs. Twice. Yes, twice.
+    //   I don't know why, but the first run always leaves an extra blank line,
+    //   which the second execution removes.
+    () => runCommand(`prettier --write ${generationConfig.outputDir}`),
+    () => runCommand(`prettier --write ${generationConfig.outputDir}`),
+  ],
+  download: [
+    () => strategy.downloadReference(generationConfig.version),
+    () => runCommand(`prettier --write ${generationConfig.baseDir}`),
+    () => runCommand(`prettier --write ${generationConfig.baseDir}`),
+  ],
+};
+
+// Run the steps!
+steps[command].forEach((step) => step());

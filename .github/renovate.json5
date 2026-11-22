@@ -1,0 +1,79 @@
+{
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  extends: [
+    "config:recommended",
+    "schedule:weekends",
+    ":automergeDisabled",
+    ":semanticCommits",
+  ],
+  lockFileMaintenance: {
+    enabled: true,
+    automerge: true,
+  },
+  prBodyNotes: [
+    "{{#if isMajor}}:warning: THIS IS A MAJOR VERSION UPDATE :warning:{{/if}}",
+    "Before merging, *always* check with the release notes if any other changes need to be done.",
+  ],
+  packageRules: [
+    {
+      // Automerge all updates for all non-Docusaurus devDependencies
+      excludePackageNames: ["/docusaurus/"],
+      matchDepTypes: ["devDependencies"],
+      automerge: true,
+      groupName: "devDependencies",
+    },
+    {
+      // Automerge minor and patch updates for all non-Docusaurus dependencies
+      excludePackageNames: ["/docusaurus/"],
+      matchDepTypes: ["dependencies"],
+      matchUpdateTypes: ["patch", "minor"],
+      automerge: true,
+      groupName: "dependencies",
+    },
+    {
+      groupName: "docusaurus",
+      matchPackageNames: ["/docusaurus/"],
+      // openapi-docs majors peer-depend on Docusaurus minors, so they ship in one PR
+      separateMajorMinor: false,
+    },
+    {
+      // Automerge docusaurus patches
+      matchPackageNames: ["/docusaurus/"],
+      matchUpdateTypes: ["patch"],
+      automerge: true,
+    },
+    {
+      // Require Docs team review for minor and major updates of docusaurus
+      matchPackageNames: ["/docusaurus/"],
+      matchUpdateTypes: ["minor", "major"],
+      reviewers: ["@camunda/docs-api-reviewers"],
+      automerge: false,
+    },
+    {
+      // Automerge patches and minor updates of GitHub Actions
+      matchManagers: ["github-actions"],
+      matchUpdateTypes: ["patch", "minor"],
+      automerge: true,
+      groupName: "GitHub Actions",
+    },
+    {
+      matchPackageNames: ["node"],
+      matchUpdateTypes: ["patch", "minor"],
+      groupName: "node",
+      automerge: true,
+    },
+    {
+      // Only allow patch updates for camunda-spring-boot-starter
+      matchManagers: ["maven"],
+      matchPackageNames: ["io.camunda:camunda-spring-boot-starter"],
+      matchUpdateTypes: ["minor", "major"],
+      enabled: false,
+    },
+    {
+      // Automerge minor and patch updates of Maven/Java dependencies
+      matchManagers: ["maven"],
+      matchUpdateTypes: ["patch", "minor"],
+      automerge: true,
+    },
+  ],
+}

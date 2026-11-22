@@ -1,0 +1,125 @@
+name: Update Release Links
+
+on:
+  schedule:
+    # Run nightly at 2 AM UTC
+    - cron: "0 2 * * *"
+  workflow_dispatch: # Allow manual triggering
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-release-links:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      pull-requests: write
+      id-token: write # OIDC for the Vault JWT login
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "24"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run release links update
+        id: update-links
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npm run update-release-links
+
+          # Check if there are any changes
+          if git diff --quiet; then
+            echo "No changes detected"
+            echo "changes_detected=false" >> $GITHUB_OUTPUT
+          else
+            echo "Changes detected"
+            echo "changes_detected=true" >> $GITHUB_OUTPUT
+            
+            # Get list of changed files
+            CHANGED_FILES=$(git diff --name-only | tr '\n' ' ')
+            echo "changed_files=${CHANGED_FILES}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Import Secrets
+        id: secrets
+        uses: hashicorp/vault-action@892a26828f195e65540a40b4768ae4571f51ebfc # v4.0.0
+        with:
+          url: ${{ secrets.VAULT_ADDR }}
+          method: jwt
+          role: ${{ secrets.VAULT_JWT_ROLE }}
+          path: ${{ secrets.VAULT_JWT_PATH }}
+          jwtGithubAudience: ${{ secrets.VAULT_JWT_AUDIENCE }}
+          exportEnv: false
+          secrets: |
+            secret/data/products/camunda-docs/github/apps/camunda-docs-pr-automation APP_ID;
+            secret/data/products/camunda-docs/github/apps/camunda-docs-pr-automation APP_PRIVATE_KEY;
+
+      - name: Generate GitHub App token
+        id: generate_token
+        uses: actions/create-github-app-token@f418cff399f7aef4c2f0ad47e25ca7a6abbdd6fc # v3.4.0
+        with:
+          client-id: ${{ steps.secrets.outputs.APP_ID }}
+          private-key: ${{ steps.secrets.outputs.APP_PRIVATE_KEY }}
+
+      - name: Create Pull Request
+        if: steps.update-links.outputs.changes_detected == 'true'
+        uses: peter-evans/create-pull-request@3ffccacd46053766916f087ce41d627c0b8cf2d1 # v8.1.3
+        with:
+          token: ${{ steps.generate_token.outputs.token }}
+          commit-message: "docs: update release links in release notes"
+          title: "🔗 Auto-update release links in release notes"
+          body: |
+            This PR was automatically created by the nightly release links update automation.
+
+            ## Changes
+
+            The script has updated the following files with missing release links:
+            ${{ steps.update-links.outputs.changed_files }}
+
+            ## What was updated
+
+            - ✅ Fetched latest stable releases from camunda/camunda and camunda/connectors repositories
+            - ✅ Excluded alpha releases and pre-releases
+            - ✅ Updated release notes files where changelog links were missing or incomplete
+
+            ---
+
+            🤖 This PR was created automatically. If you have any questions about the automation, please check the [update-release-links.js script](./hacks/update-release-links.js).
+          branch: auto/update-release-links
+          delete-branch: true
+          team-reviewers: camunda/tech-writers
+
+      - name: Log automation result
+        run: |
+          if [ "${{ steps.update-links.outputs.changes_detected }}" == "true" ]; then
+            echo "✅ Release links update automation completed successfully. PR created."
+          else
+            echo "ℹ️ No updates needed. All release links are up to date."
+          fi
+  notify-failure:
+    needs:
+      - update-release-links
+    if: failure() || (success() && fromJSON(github.run_attempt) > 1)
+    permissions:
+      id-token: write # OIDC for the Vault JWT login
+    uses: ./.github/workflows/notify-failure.yml
+    with:
+      # If any dependent job fails, set the dependency_status to 'failure',
+      # otherwise set it to 'success'.
+      dependency_status: ${{ contains(needs.*.result, 'failure') && 'failure' || 'success' }}
+    secrets:
+      VAULT_ADDR: ${{ secrets.VAULT_ADDR }}
+      VAULT_JWT_PATH: ${{ secrets.VAULT_JWT_PATH }}
+      VAULT_JWT_ROLE: ${{ secrets.VAULT_JWT_ROLE }}
+      VAULT_JWT_AUDIENCE: ${{ secrets.VAULT_JWT_AUDIENCE }}

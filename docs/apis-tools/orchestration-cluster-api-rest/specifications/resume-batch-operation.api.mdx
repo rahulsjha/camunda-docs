@@ -1,0 +1,338 @@
+---
+id: resume-batch-operation
+title: "Resume Batch operation"
+sidebar_label: "Resume Batch operation"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: docs/apis-tools/orchestration-cluster-api-rest/specifications/orchestration-cluster-api
+custom_edit_url: null
+hide_send_button: true
+---
+
+import MarkerRequiredPermissions from "@site/src/mdx/MarkerRequiredPermissions";
+
+import MarkerScope from "@site/src/mdx/MarkerScope";
+
+import MarkerAddedInVersion from "@site/src/mdx/MarkerAddedInVersion";
+
+import MarkerStronglyConsistentExtension from "@site/src/mdx/MarkerStronglyConsistentExtension";
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading as={"h1"} className={"openapi__heading"}>
+  {"Resume Batch operation"} <MarkerAddedInVersion version="8.8" />{" "}
+  <MarkerScope scope="physical-tenant" />
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/batch-operations/{batchOperationKey}/resumption"}
+  context={"endpoint"}
+></MethodEndpoint>
+
+<MarkerStronglyConsistentExtension />
+
+Resumes a suspended batch operation.
+This is done asynchronously, the progress can be tracked using the batch operation status endpoint (/batch-operations/\{batchOperationKey\}).
+
+<MarkerRequiredPermissions
+  permissions={[{ resourceType: "BATCH", permissionType: "UPDATE" }]}
+/>
+
+<Heading id={"request"} as={"h2"} className={"openapi-tabs__heading"}>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[
+    {
+      name: "batchOperationKey",
+      in: "path",
+      required: true,
+      description: "The key (or operate legacy ID) of the batch operation.",
+      schema: {
+        format: "BatchOperationKey | uuid",
+        type: "string",
+        description: "System-generated key for an batch operation.",
+        example: "2251799813684321",
+        title: "BatchOperationKey",
+      },
+    },
+  ]}
+></ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{ content: { "application/json": {} }, required: false }}
+></RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{
+    "204": {
+      description: "The batch operation resume request was created.",
+      content: {},
+    },
+    "400": {
+      description: "The provided data is not valid.",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            required: ["type", "title", "status", "detail", "instance"],
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example:
+                  "https://docs.camunda.io/api/v2.0/problem-types/bad-request",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri-reference",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+    "403": {
+      description: "Forbidden. The request is not allowed.",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            required: ["type", "title", "status", "detail", "instance"],
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example:
+                  "https://docs.camunda.io/api/v2.0/problem-types/bad-request",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri-reference",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+    "404": {
+      description: "Not found. The batch operation was not found.",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            required: ["type", "title", "status", "detail", "instance"],
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example:
+                  "https://docs.camunda.io/api/v2.0/problem-types/bad-request",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri-reference",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+    "500": {
+      description: "An internal error occurred while processing the request.",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            required: ["type", "title", "status", "detail", "instance"],
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example:
+                  "https://docs.camunda.io/api/v2.0/problem-types/bad-request",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri-reference",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+    "503": {
+      description:
+        "The service is currently unavailable. This may happen only on some requests where the system creates backpressure to prevent the server's compute resources from being exhausted, avoiding more severe failures. In this case, the title of the error object contains `RESOURCE_EXHAUSTED`. Clients are recommended to eventually retry those requests after a backoff period. You can learn more about the backpressure mechanism here: https://docs.camunda.io/docs/components/zeebe/technical-concepts/internal-processing/#handling-backpressure .\n",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            required: ["type", "title", "status", "detail", "instance"],
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example:
+                  "https://docs.camunda.io/api/v2.0/problem-types/bad-request",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri-reference",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+  }}
+></StatusCodes>

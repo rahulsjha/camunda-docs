@@ -1,0 +1,379 @@
+---
+id: get-decision-requirements
+title: "Get decision requirements"
+description: "<MarkerEventuallyConsistentExtension />"
+sidebar_label: "Get decision requirements"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: versioned_docs/version-8.8/apis-tools/orchestration-cluster-api-rest/specifications/orchestration-cluster-api
+custom_edit_url: null
+hide_send_button: true
+---
+
+import MarkerEventuallyConsistentExtension from "@site/src/mdx/MarkerEventuallyConsistentExtension";
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get decision requirements"}
+></Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/decision-requirements/{decisionRequirementsKey}"}
+  context={"endpoint"}
+></MethodEndpoint>
+
+<MarkerEventuallyConsistentExtension />
+
+Returns Decision Requirements as JSON.
+
+<Heading id={"request"} as={"h2"} className={"openapi-tabs__heading"}>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[
+    {
+      name: "decisionRequirementsKey",
+      in: "path",
+      required: true,
+      description:
+        "The assigned key of the decision requirements, which acts as a unique identifier for this decision requirements.",
+      schema: {
+        type: "string",
+        format: "string<DecisionRequirementsKey>",
+        description:
+          "Zeebe Engine resource key (Java long serialized as string)",
+      },
+    },
+  ]}
+></ParamsDetails>
+
+<RequestSchema title={"Body"} body={undefined}></RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{
+    "200": {
+      description: "The decision requirements is successfully returned.",
+      content: {
+        "application/json": {
+          schema: {
+            type: "object",
+            properties: {
+              decisionRequirementsName: {
+                type: "string",
+                description: "The DMN name of the decision requirements.",
+              },
+              version: {
+                type: "integer",
+                format: "int32",
+                description:
+                  "The assigned version of the decision requirements.",
+              },
+              decisionRequirementsId: {
+                type: "string",
+                description: "The DMN ID of the decision requirements.",
+              },
+              resourceName: {
+                type: "string",
+                description:
+                  "The name of the resource from which this decision requirements was parsed.",
+              },
+              tenantId: {
+                description: "The tenant ID of the decision requirements.",
+                allOf: [
+                  {
+                    example: "customer-service",
+                    description: "The unique identifier of the tenant.",
+                    format: "TenantId",
+                    type: "string",
+                    title: "TenantId",
+                  },
+                ],
+              },
+              decisionRequirementsKey: {
+                allOf: [
+                  {
+                    allOf: [
+                      {
+                        description:
+                          "Zeebe Engine resource key (Java long serialized as string)",
+                        type: "string",
+                        title: "LongKey",
+                      },
+                    ],
+                    description:
+                      "System-generated key for a deployed decision requirements definition.",
+                    format: "DecisionRequirementsKey",
+                    example: "2251799813683346",
+                    type: "string",
+                    title: "DecisionRequirementsKey",
+                  },
+                ],
+                description:
+                  "The assigned key, which acts as a unique identifier for this decision requirements.",
+              },
+            },
+            title: "DecisionRequirementsResult",
+          },
+        },
+      },
+    },
+    "400": {
+      description: "The provided data is not valid.",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example: "about:blank",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+    "401": {
+      description: "The request lacks valid authentication credentials.",
+      headers: { "WWW-Authenticate": { schema: { type: "string" } } },
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example: "about:blank",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+    "403": {
+      description: "Forbidden. The request is not allowed.",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example: "about:blank",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+    "404": {
+      description:
+        "The decision requirements with the given key was not found. More details are provided in the response body.\n",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example: "about:blank",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+    "500": {
+      description: "An internal error occurred while processing the request.\n",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example: "about:blank",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+  }}
+></StatusCodes>

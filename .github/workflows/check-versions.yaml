@@ -1,0 +1,58 @@
+name: Check versions
+
+on: pull_request
+
+jobs:
+  list-pr-changes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout last two commits of the PR
+        # The last *two* commits are (1) everything in this branch, and (2) the parent of this branch.
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 2
+
+      - name: Capture version configuration as environment variable
+        run: echo "VERSION_CONFIG=$(jq -c . < .github/workflows/check-versions/version-config.json)" >> $GITHUB_ENV
+
+      - name: Capture changed files to temp file
+        run: git diff --name-only HEAD^ | jq -R -s -c 'split("\n")[:-1]' > "$RUNNER_TEMP/changed-files.json"
+
+      - name: Identify missing changes
+        id: identify-missing-changes
+        run: node .github/workflows/check-versions/identify-missing-changes.action.js "$RUNNER_TEMP/changed-files.json" > "$RUNNER_TEMP/missing-changes.json"
+
+      - name: Build messages
+        id: build-messages
+        run: |
+          OUTPUT=$(node .github/workflows/check-versions/build-messages.js "$RUNNER_TEMP/missing-changes.json")
+          echo "MESSAGES<<EOF" >> $GITHUB_ENV
+          printf '%s\n' "$OUTPUT" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+
+      - name: Comment on PR if version updates are potentially missing
+        # Fork PRs get a read-only GITHUB_TOKEN, so commenting fails; the check is advisory only.
+        continue-on-error: true
+        uses: thollander/actions-comment-pull-request@24bffb9b452ba05a4f3f77933840a6a841d1b32b # v3.0.1
+        if: ${{ env.MESSAGES != '' }}
+        with:
+          message: |
+            :wave: :robot: :thinking: Hello, @${{ github.actor }}! Did you make your changes in all the right places? 
+
+            ${{ env.MESSAGES }}
+
+            You may have done this intentionally, but we wanted to point it out in case you didn't. You can read more about the versioning within our docs in our [documentation guidelines](https://github.com/camunda/camunda-docs/blob/c666b7e5e35bfe31468ce4ac679ea7b62ab86d73/howtos/documentation-guidelines.md#versions).
+          comment-tag: check-versions
+
+      - name: Comment 'LGTM' on PR once potential version issues are resolved
+        # Fork PRs get a read-only GITHUB_TOKEN, so commenting fails; the check is advisory only.
+        continue-on-error: true
+        uses: thollander/actions-comment-pull-request@24bffb9b452ba05a4f3f77933840a6a841d1b32b # v3.0.1
+        if: ${{ env.MESSAGES == '' }}
+        with:
+          message: |
+            :wave: :robot: :white_check_mark: Looks like the changes were ported across versions, nice job! :tada:
+
+            You can read more about the versioning within our docs in our [documentation guidelines](https://github.com/camunda/camunda-docs/blob/c666b7e5e35bfe31468ce4ac679ea7b62ab86d73/howtos/documentation-guidelines.md#versions).
+          comment-tag: check-versions
+          create-if-not-exists: false

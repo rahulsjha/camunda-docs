@@ -1,0 +1,1388 @@
+---
+id: search-variables
+title: "Search variables"
+sidebar_label: "Search variables"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: docs/apis-tools/orchestration-cluster-api-rest/specifications/orchestration-cluster-api
+custom_edit_url: null
+hide_send_button: true
+---
+
+import MarkerRequiredPermissions from "@site/src/mdx/MarkerRequiredPermissions";
+
+import MarkerScope from "@site/src/mdx/MarkerScope";
+
+import MarkerAddedInVersion from "@site/src/mdx/MarkerAddedInVersion";
+
+import MarkerEventuallyConsistentExtension from "@site/src/mdx/MarkerEventuallyConsistentExtension";
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading as={"h1"} className={"openapi__heading"}>
+  {"Search variables"} <MarkerAddedInVersion version="8.8" />{" "}
+  <MarkerScope scope="physical-tenant" />
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/variables/search"}
+  context={"endpoint"}
+></MethodEndpoint>
+
+<MarkerEventuallyConsistentExtension />
+
+Search for variables based on given criteria.
+
+This endpoint returns variables that exist directly at the specified scopes - it does not
+include variables from parent scopes that would be visible through the scope hierarchy.
+
+Variables can be process-level (scoped to the process instance) or local (scoped to specific
+BPMN elements like tasks, subprocesses, etc.).
+
+By default, long variable values in the response are truncated.
+
+<MarkerRequiredPermissions
+  permissions={[
+    {
+      resourceType: "PROCESS_DEFINITION",
+      permissionType: "READ_PROCESS_INSTANCE",
+    },
+  ]}
+  enforcement={"filter"}
+/>
+
+<Heading id={"request"} as={"h2"} className={"openapi-tabs__heading"}>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[
+    {
+      name: "truncateValues",
+      in: "query",
+      required: false,
+      description:
+        "When true (default), long variable values in the response are truncated. When false, full variable values are returned.",
+      schema: { type: "boolean" },
+    },
+  ]}
+></ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{
+    required: false,
+    content: {
+      "application/json": {
+        schema: {
+          description: "Variable search query request.",
+          type: "object",
+          allOf: [
+            {
+              type: "object",
+              properties: {
+                page: {
+                  description: "Pagination criteria.",
+                  allOf: [
+                    {
+                      description:
+                        "Pagination criteria. Can use offset-based pagination (from/limit) OR cursor-based pagination (after/before + limit), but not both.",
+                      oneOf: [
+                        {
+                          type: "object",
+                          title: "Limit-based pagination",
+                          properties: {
+                            limit: {
+                              description:
+                                "The maximum number of items to return in one request.",
+                              type: "integer",
+                              format: "int32",
+                              default: 100,
+                              minimum: 0,
+                              maximum: 10000,
+                            },
+                          },
+                        },
+                        {
+                          type: "object",
+                          title: "Offset-based pagination",
+                          properties: {
+                            from: {
+                              description:
+                                "The index of items to start searching from.",
+                              type: "integer",
+                              format: "int32",
+                              minimum: 0,
+                            },
+                            limit: {
+                              description:
+                                "The maximum number of items to return in one request.",
+                              type: "integer",
+                              format: "int32",
+                              default: 100,
+                              minimum: 0,
+                            },
+                          },
+                        },
+                        {
+                          type: "object",
+                          title: "Cursor-based forward pagination",
+                          properties: {
+                            after: {
+                              description:
+                                "Use the `endCursor` value from the previous response to fetch the next page of results.",
+                              allOf: [
+                                {
+                                  description:
+                                    "The end cursor in a search query result set.",
+                                  format: "base64",
+                                  type: "string",
+                                  example: "WzIyNTE3OTk4MTM2ODcxMDJd",
+                                  title: "EndCursor",
+                                },
+                              ],
+                            },
+                            limit: {
+                              description:
+                                "The maximum number of items to return in one request.",
+                              type: "integer",
+                              format: "int32",
+                              default: 100,
+                              minimum: 0,
+                              maximum: 10000,
+                            },
+                          },
+                        },
+                        {
+                          type: "object",
+                          title: "Cursor-based backward pagination",
+                          properties: {
+                            before: {
+                              description:
+                                "Use the `startCursor` value from the previous response to fetch the previous page of results.",
+                              allOf: [
+                                {
+                                  description:
+                                    "The start cursor in a search query result set.",
+                                  format: "base64",
+                                  type: "string",
+                                  example: "WzIyNTE3OTk4MTM2ODcxMDJd",
+                                  title: "StartCursor",
+                                },
+                              ],
+                            },
+                            limit: {
+                              description:
+                                "The maximum number of items to return in one request.",
+                              type: "integer",
+                              format: "int32",
+                              default: 100,
+                              minimum: 0,
+                              maximum: 10000,
+                            },
+                          },
+                        },
+                      ],
+                      title: "SearchQueryPageRequest",
+                    },
+                  ],
+                },
+              },
+              title: "SearchQueryRequest",
+            },
+          ],
+          properties: {
+            sort: {
+              description: "Sort field criteria.",
+              type: "array",
+              items: {
+                type: "object",
+                properties: {
+                  field: {
+                    description: "The field to sort by.",
+                    type: "string",
+                    enum: [
+                      "value",
+                      "name",
+                      "tenantId",
+                      "variableKey",
+                      "scopeKey",
+                      "processInstanceKey",
+                    ],
+                  },
+                  order: {
+                    description:
+                      "The order in which to sort the related field.",
+                    type: "string",
+                    enum: ["ASC", "DESC"],
+                    default: "ASC",
+                    title: "SortOrderEnum",
+                  },
+                },
+                required: ["field"],
+                title: "VariableSearchQuerySortRequest",
+              },
+            },
+            filter: {
+              description: "The variable search filters.",
+              allOf: [
+                {
+                  description: "Variable filter request.",
+                  type: "object",
+                  properties: {
+                    name: {
+                      description: "Name of the variable.",
+                      allOf: [
+                        {
+                          description:
+                            "String property with full advanced search capabilities.",
+                          oneOf: [
+                            {
+                              type: "string",
+                              title: "Exact match",
+                              description: "Matches the value exactly.",
+                            },
+                            {
+                              title: "Advanced filter",
+                              description: "Advanced string filter.",
+                              allOf: [
+                                {
+                                  title: "Advanced filter",
+                                  description: "Basic advanced string filter.",
+                                  type: "object",
+                                  properties: {
+                                    $eq: {
+                                      description:
+                                        "Checks for equality with the provided value.",
+                                      type: "string",
+                                    },
+                                    $neq: {
+                                      description:
+                                        "Checks for inequality with the provided value.",
+                                      type: "string",
+                                    },
+                                    $exists: {
+                                      description:
+                                        "Checks if the current property exists.",
+                                      type: "boolean",
+                                    },
+                                    $in: {
+                                      description:
+                                        "Checks if the property matches any of the provided values.",
+                                      type: "array",
+                                      items: { type: "string" },
+                                    },
+                                    $notIn: {
+                                      description:
+                                        "Checks if the property matches none of the provided values.",
+                                      type: "array",
+                                      items: { type: "string" },
+                                    },
+                                  },
+                                },
+                                {
+                                  type: "object",
+                                  properties: {
+                                    $like: {
+                                      type: "string",
+                                      description:
+                                        "Checks if the property matches the provided like value.\n\nSupported wildcard characters are:\n\n* `*`: matches zero, one, or multiple characters.\n* `?`: matches one, single character.\n\nWildcard characters can be escaped with backslash, for instance: `\\*`.\n",
+                                      title: "LikeFilter",
+                                    },
+                                  },
+                                },
+                              ],
+                            },
+                          ],
+                          title: "StringFilterProperty",
+                        },
+                      ],
+                    },
+                    value: {
+                      description:
+                        'The value of the variable.\nVariable values in filters need to be in serialized JSON format. For example, a variable\nwith string value `myValue` can be found with the filter value `"myValue"`. Consider\nappropriate escaping for special characters in JSON strings when constructing filter values.\n',
+                      allOf: [
+                        {
+                          description:
+                            "String property with full advanced search capabilities.",
+                          oneOf: [
+                            {
+                              type: "string",
+                              title: "Exact match",
+                              description: "Matches the value exactly.",
+                            },
+                            {
+                              title: "Advanced filter",
+                              description: "Advanced string filter.",
+                              allOf: [
+                                {
+                                  title: "Advanced filter",
+                                  description: "Basic advanced string filter.",
+                                  type: "object",
+                                  properties: {
+                                    $eq: {
+                                      description:
+                                        "Checks for equality with the provided value.",
+                                      type: "string",
+                                    },
+                                    $neq: {
+                                      description:
+                                        "Checks for inequality with the provided value.",
+                                      type: "string",
+                                    },
+                                    $exists: {
+                                      description:
+                                        "Checks if the current property exists.",
+                                      type: "boolean",
+                                    },
+                                    $in: {
+                                      description:
+                                        "Checks if the property matches any of the provided values.",
+                                      type: "array",
+                                      items: { type: "string" },
+                                    },
+                                    $notIn: {
+                                      description:
+                                        "Checks if the property matches none of the provided values.",
+                                      type: "array",
+                                      items: { type: "string" },
+                                    },
+                                  },
+                                },
+                                {
+                                  type: "object",
+                                  properties: {
+                                    $like: {
+                                      type: "string",
+                                      description:
+                                        "Checks if the property matches the provided like value.\n\nSupported wildcard characters are:\n\n* `*`: matches zero, one, or multiple characters.\n* `?`: matches one, single character.\n\nWildcard characters can be escaped with backslash, for instance: `\\*`.\n",
+                                      title: "LikeFilter",
+                                    },
+                                  },
+                                },
+                              ],
+                            },
+                          ],
+                          title: "StringFilterProperty",
+                        },
+                      ],
+                    },
+                    tenantId: {
+                      description: "Tenant ID of this variable.",
+                      allOf: [
+                        {
+                          example: "customer-service",
+                          description: "The unique identifier of the tenant.",
+                          format: "TenantId",
+                          type: "string",
+                          title: "TenantId",
+                        },
+                      ],
+                    },
+                    isTruncated: {
+                      description: "Whether the value is truncated or not.",
+                      type: "boolean",
+                    },
+                    variableKey: {
+                      description: "The key for this variable.",
+                      allOf: [
+                        {
+                          description:
+                            "VariableKey property with full advanced search capabilities.",
+                          oneOf: [
+                            {
+                              type: "string",
+                              title: "Exact match",
+                              description: "Matches the value exactly.",
+                              allOf: [
+                                {
+                                  description:
+                                    "System-generated key for a variable.",
+                                  format: "VariableKey",
+                                  example: "2251799813683287",
+                                  type: "string",
+                                  allOf: [
+                                    {
+                                      description:
+                                        "Zeebe Engine resource key (Java long serialized as string)",
+                                      type: "string",
+                                      title: "LongKey",
+                                    },
+                                  ],
+                                  title: "VariableKey",
+                                },
+                              ],
+                            },
+                            {
+                              title: "Advanced filter",
+                              description: "Advanced VariableKey filter.",
+                              type: "object",
+                              properties: {
+                                $eq: {
+                                  description:
+                                    "Checks for equality with the provided value.",
+                                  allOf: [
+                                    {
+                                      description:
+                                        "System-generated key for a variable.",
+                                      format: "VariableKey",
+                                      example: "2251799813683287",
+                                      type: "string",
+                                      allOf: [
+                                        {
+                                          description:
+                                            "Zeebe Engine resource key (Java long serialized as string)",
+                                          type: "string",
+                                          title: "LongKey",
+                                        },
+                                      ],
+                                      title: "VariableKey",
+                                    },
+                                  ],
+                                },
+                                $neq: {
+                                  description:
+                                    "Checks for inequality with the provided value.",
+                                  allOf: [
+                                    {
+                                      description:
+                                        "System-generated key for a variable.",
+                                      format: "VariableKey",
+                                      example: "2251799813683287",
+                                      type: "string",
+                                      allOf: [
+                                        {
+                                          description:
+                                            "Zeebe Engine resource key (Java long serialized as string)",
+                                          type: "string",
+                                          title: "LongKey",
+                                        },
+                                      ],
+                                      title: "VariableKey",
+                                    },
+                                  ],
+                                },
+                                $exists: {
+                                  description:
+                                    "Checks if the current property exists.",
+                                  type: "boolean",
+                                },
+                                $in: {
+                                  description:
+                                    "Checks if the property matches any of the provided values.",
+                                  type: "array",
+                                  items: {
+                                    description:
+                                      "System-generated key for a variable.",
+                                    format: "VariableKey",
+                                    example: "2251799813683287",
+                                    type: "string",
+                                    allOf: [
+                                      {
+                                        description:
+                                          "Zeebe Engine resource key (Java long serialized as string)",
+                                        type: "string",
+                                        title: "LongKey",
+                                      },
+                                    ],
+                                    title: "VariableKey",
+                                  },
+                                },
+                                $notIn: {
+                                  description:
+                                    "Checks if the property matches none of the provided values.",
+                                  type: "array",
+                                  items: {
+                                    description:
+                                      "System-generated key for a variable.",
+                                    format: "VariableKey",
+                                    example: "2251799813683287",
+                                    type: "string",
+                                    allOf: [
+                                      {
+                                        description:
+                                          "Zeebe Engine resource key (Java long serialized as string)",
+                                        type: "string",
+                                        title: "LongKey",
+                                      },
+                                    ],
+                                    title: "VariableKey",
+                                  },
+                                },
+                              },
+                            },
+                          ],
+                          title: "VariableKeyFilterProperty",
+                        },
+                      ],
+                    },
+                    scopeKey: {
+                      description:
+                        "The key of the scope that defines where this variable is directly defined. This can be a\nprocess instance key (for process-level variables) or an element instance key (for local\nvariables scoped to tasks, subprocesses, gateways, events, etc.). Use this filter to\nfind variables directly defined in specific scopes. Note that this does not include\nvariables from parent scopes that would be visible through the scope hierarchy.\n",
+                      allOf: [
+                        {
+                          description:
+                            "ScopeKey property with full advanced search capabilities. Filter by the key of the\nelement instance or process instance that defines the scope of a variable.\n",
+                          oneOf: [
+                            {
+                              type: "string",
+                              title: "Exact match",
+                              description: "Matches the value exactly.",
+                              allOf: [
+                                {
+                                  description:
+                                    "System-generated key for a scope. A scope can hold variables and represents either an\nelement instance in a BPMN process or the process instance itself.\n",
+                                  type: "string",
+                                  format: "ScopeKey",
+                                  oneOf: [
+                                    {
+                                      description:
+                                        "System-generated key for a process instance.",
+                                      format: "ProcessInstanceKey",
+                                      example: "2251799813690746",
+                                      type: "string",
+                                      allOf: [
+                                        {
+                                          description:
+                                            "Zeebe Engine resource key (Java long serialized as string)",
+                                          type: "string",
+                                          title: "LongKey",
+                                        },
+                                      ],
+                                      title: "ProcessInstanceKey",
+                                    },
+                                    {
+                                      description:
+                                        "System-generated key for a element instance.",
+                                      format: "ElementInstanceKey",
+                                      example: "2251799813686789",
+                                      type: "string",
+                                      allOf: [
+                                        {
+                                          description:
+                                            "Zeebe Engine resource key (Java long serialized as string)",
+                                          type: "string",
+                                          title: "LongKey",
+                                        },
+                                      ],
+                                      title: "ElementInstanceKey",
+                                    },
+                                  ],
+                                  title: "ScopeKey",
+                                },
+                              ],
+                            },
+                            {
+                              title: "Advanced filter",
+                              description: "Advanced ScopeKey filter.",
+                              type: "object",
+                              properties: {
+                                $eq: {
+                                  description:
+                                    "Checks for equality with the provided value.",
+                                  allOf: [
+                                    {
+                                      description:
+                                        "System-generated key for a scope. A scope can hold variables and represents either an\nelement instance in a BPMN process or the process instance itself.\n",
+                                      type: "string",
+                                      format: "ScopeKey",
+                                      oneOf: [
+                                        {
+                                          description:
+                                            "System-generated key for a process instance.",
+                                          format: "ProcessInstanceKey",
+                                          example: "2251799813690746",
+                                          type: "string",
+                                          allOf: [
+                                            {
+                                              description:
+                                                "Zeebe Engine resource key (Java long serialized as string)",
+                                              type: "string",
+                                              title: "LongKey",
+                                            },
+                                          ],
+                                          title: "ProcessInstanceKey",
+                                        },
+                                        {
+                                          description:
+                                            "System-generated key for a element instance.",
+                                          format: "ElementInstanceKey",
+                                          example: "2251799813686789",
+                                          type: "string",
+                                          allOf: [
+                                            {
+                                              description:
+                                                "Zeebe Engine resource key (Java long serialized as string)",
+                                              type: "string",
+                                              title: "LongKey",
+                                            },
+                                          ],
+                                          title: "ElementInstanceKey",
+                                        },
+                                      ],
+                                      title: "ScopeKey",
+                                    },
+                                  ],
+                                },
+                                $neq: {
+                                  description:
+                                    "Checks for inequality with the provided value.",
+                                  allOf: [
+                                    {
+                                      description:
+                                        "System-generated key for a scope. A scope can hold variables and represents either an\nelement instance in a BPMN process or the process instance itself.\n",
+                                      type: "string",
+                                      format: "ScopeKey",
+                                      oneOf: [
+                                        {
+                                          description:
+                                            "System-generated key for a process instance.",
+                                          format: "ProcessInstanceKey",
+                                          example: "2251799813690746",
+                                          type: "string",
+                                          allOf: [
+                                            {
+                                              description:
+                                                "Zeebe Engine resource key (Java long serialized as string)",
+                                              type: "string",
+                                              title: "LongKey",
+                                            },
+                                          ],
+                                          title: "ProcessInstanceKey",
+                                        },
+                                        {
+                                          description:
+                                            "System-generated key for a element instance.",
+                                          format: "ElementInstanceKey",
+                                          example: "2251799813686789",
+                                          type: "string",
+                                          allOf: [
+                                            {
+                                              description:
+                                                "Zeebe Engine resource key (Java long serialized as string)",
+                                              type: "string",
+                                              title: "LongKey",
+                                            },
+                                          ],
+                                          title: "ElementInstanceKey",
+                                        },
+                                      ],
+                                      title: "ScopeKey",
+                                    },
+                                  ],
+                                },
+                                $exists: {
+                                  description:
+                                    "Checks if the current property exists.",
+                                  type: "boolean",
+                                },
+                                $in: {
+                                  description:
+                                    "Checks if the property matches any of the provided values.",
+                                  type: "array",
+                                  items: {
+                                    description:
+                                      "System-generated key for a scope. A scope can hold variables and represents either an\nelement instance in a BPMN process or the process instance itself.\n",
+                                    type: "string",
+                                    format: "ScopeKey",
+                                    oneOf: [
+                                      {
+                                        description:
+                                          "System-generated key for a process instance.",
+                                        format: "ProcessInstanceKey",
+                                        example: "2251799813690746",
+                                        type: "string",
+                                        allOf: [
+                                          {
+                                            description:
+                                              "Zeebe Engine resource key (Java long serialized as string)",
+                                            type: "string",
+                                            title: "LongKey",
+                                          },
+                                        ],
+                                        title: "ProcessInstanceKey",
+                                      },
+                                      {
+                                        description:
+                                          "System-generated key for a element instance.",
+                                        format: "ElementInstanceKey",
+                                        example: "2251799813686789",
+                                        type: "string",
+                                        allOf: [
+                                          {
+                                            description:
+                                              "Zeebe Engine resource key (Java long serialized as string)",
+                                            type: "string",
+                                            title: "LongKey",
+                                          },
+                                        ],
+                                        title: "ElementInstanceKey",
+                                      },
+                                    ],
+                                    title: "ScopeKey",
+                                  },
+                                },
+                                $notIn: {
+                                  description:
+                                    "Checks if the property matches none of the provided values.",
+                                  type: "array",
+                                  items: {
+                                    description:
+                                      "System-generated key for a scope. A scope can hold variables and represents either an\nelement instance in a BPMN process or the process instance itself.\n",
+                                    type: "string",
+                                    format: "ScopeKey",
+                                    oneOf: [
+                                      {
+                                        description:
+                                          "System-generated key for a process instance.",
+                                        format: "ProcessInstanceKey",
+                                        example: "2251799813690746",
+                                        type: "string",
+                                        allOf: [
+                                          {
+                                            description:
+                                              "Zeebe Engine resource key (Java long serialized as string)",
+                                            type: "string",
+                                            title: "LongKey",
+                                          },
+                                        ],
+                                        title: "ProcessInstanceKey",
+                                      },
+                                      {
+                                        description:
+                                          "System-generated key for a element instance.",
+                                        format: "ElementInstanceKey",
+                                        example: "2251799813686789",
+                                        type: "string",
+                                        allOf: [
+                                          {
+                                            description:
+                                              "Zeebe Engine resource key (Java long serialized as string)",
+                                            type: "string",
+                                            title: "LongKey",
+                                          },
+                                        ],
+                                        title: "ElementInstanceKey",
+                                      },
+                                    ],
+                                    title: "ScopeKey",
+                                  },
+                                },
+                              },
+                            },
+                          ],
+                          title: "ScopeKeyFilterProperty",
+                        },
+                      ],
+                    },
+                    processInstanceKey: {
+                      description:
+                        "The key of the process instance of this variable.",
+                      allOf: [
+                        {
+                          description:
+                            "ProcessInstanceKey property with full advanced search capabilities.",
+                          oneOf: [
+                            {
+                              type: "string",
+                              title: "Exact match",
+                              description: "Matches the value exactly.",
+                              allOf: [
+                                {
+                                  description:
+                                    "System-generated key for a process instance.",
+                                  format: "ProcessInstanceKey",
+                                  example: "2251799813690746",
+                                  type: "string",
+                                  allOf: [
+                                    {
+                                      description:
+                                        "Zeebe Engine resource key (Java long serialized as string)",
+                                      type: "string",
+                                      title: "LongKey",
+                                    },
+                                  ],
+                                  title: "ProcessInstanceKey",
+                                },
+                              ],
+                            },
+                            {
+                              title: "Advanced filter",
+                              description:
+                                "Advanced ProcessInstanceKey filter.",
+                              type: "object",
+                              properties: {
+                                $eq: {
+                                  description:
+                                    "Checks for equality with the provided value.",
+                                  allOf: [
+                                    {
+                                      description:
+                                        "System-generated key for a process instance.",
+                                      format: "ProcessInstanceKey",
+                                      example: "2251799813690746",
+                                      type: "string",
+                                      allOf: [
+                                        {
+                                          description:
+                                            "Zeebe Engine resource key (Java long serialized as string)",
+                                          type: "string",
+                                          title: "LongKey",
+                                        },
+                                      ],
+                                      title: "ProcessInstanceKey",
+                                    },
+                                  ],
+                                },
+                                $neq: {
+                                  description:
+                                    "Checks for inequality with the provided value.",
+                                  allOf: [
+                                    {
+                                      description:
+                                        "System-generated key for a process instance.",
+                                      format: "ProcessInstanceKey",
+                                      example: "2251799813690746",
+                                      type: "string",
+                                      allOf: [
+                                        {
+                                          description:
+                                            "Zeebe Engine resource key (Java long serialized as string)",
+                                          type: "string",
+                                          title: "LongKey",
+                                        },
+                                      ],
+                                      title: "ProcessInstanceKey",
+                                    },
+                                  ],
+                                },
+                                $exists: {
+                                  description:
+                                    "Checks if the current property exists.",
+                                  type: "boolean",
+                                },
+                                $in: {
+                                  description:
+                                    "Checks if the property matches any of the provided values.",
+                                  type: "array",
+                                  items: {
+                                    description:
+                                      "System-generated key for a process instance.",
+                                    format: "ProcessInstanceKey",
+                                    example: "2251799813690746",
+                                    type: "string",
+                                    allOf: [
+                                      {
+                                        description:
+                                          "Zeebe Engine resource key (Java long serialized as string)",
+                                        type: "string",
+                                        title: "LongKey",
+                                      },
+                                    ],
+                                    title: "ProcessInstanceKey",
+                                  },
+                                },
+                                $notIn: {
+                                  description:
+                                    "Checks if the property matches none of the provided values.",
+                                  type: "array",
+                                  items: {
+                                    description:
+                                      "System-generated key for a process instance.",
+                                    format: "ProcessInstanceKey",
+                                    example: "2251799813690746",
+                                    type: "string",
+                                    allOf: [
+                                      {
+                                        description:
+                                          "Zeebe Engine resource key (Java long serialized as string)",
+                                        type: "string",
+                                        title: "LongKey",
+                                      },
+                                    ],
+                                    title: "ProcessInstanceKey",
+                                  },
+                                },
+                              },
+                            },
+                          ],
+                          title: "ProcessInstanceKeyFilterProperty",
+                        },
+                      ],
+                    },
+                  },
+                  title: "VariableFilter",
+                },
+              ],
+            },
+          },
+          title: "VariableSearchQuery",
+        },
+      },
+    },
+  }}
+></RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{
+    "200": {
+      description: "The variable search result.",
+      content: {
+        "application/json": {
+          schema: {
+            description: "Variable search query response.",
+            type: "object",
+            required: ["items"],
+            allOf: [
+              {
+                type: "object",
+                required: ["page"],
+                properties: {
+                  page: {
+                    description:
+                      "Pagination information about the search results.",
+                    type: "object",
+                    required: [
+                      "totalItems",
+                      "hasMoreTotalItems",
+                      "startCursor",
+                      "endCursor",
+                    ],
+                    properties: {
+                      totalItems: {
+                        description: "Total items matching the criteria.",
+                        type: "integer",
+                        format: "int64",
+                      },
+                      hasMoreTotalItems: {
+                        description:
+                          "Indicates whether the `totalItems` value has been capped due to system limits. When true, `totalItems` is a lower bound and the actual number of matching items is greater than the reported value.\n",
+                        type: "boolean",
+                      },
+                      startCursor: {
+                        description:
+                          "The cursor value for getting the previous page of results. Use this in the `before` field of an ensuing request.",
+                        nullable: true,
+                        allOf: [
+                          {
+                            description:
+                              "The start cursor in a search query result set.",
+                            format: "base64",
+                            type: "string",
+                            example: "WzIyNTE3OTk4MTM2ODcxMDJd",
+                            title: "StartCursor",
+                          },
+                        ],
+                      },
+                      endCursor: {
+                        description:
+                          "The cursor value for getting the next page of results. Use this in the `after` field of an ensuing request.",
+                        nullable: true,
+                        allOf: [
+                          {
+                            description:
+                              "The end cursor in a search query result set.",
+                            format: "base64",
+                            type: "string",
+                            example: "WzIyNTE3OTk4MTM2ODcxMDJd",
+                            title: "EndCursor",
+                          },
+                        ],
+                      },
+                    },
+                    title: "SearchQueryPageResponse",
+                  },
+                },
+                title: "SearchQueryResponse",
+              },
+            ],
+            properties: {
+              items: {
+                description: "The matching variables.",
+                type: "array",
+                items: {
+                  required: ["isTruncated", "value"],
+                  description: "Variable search response item.",
+                  type: "object",
+                  allOf: [
+                    {
+                      description: "Variable response item.",
+                      type: "object",
+                      required: [
+                        "name",
+                        "processInstanceKey",
+                        "tenantId",
+                        "variableKey",
+                        "scopeKey",
+                        "rootProcessInstanceKey",
+                      ],
+                      properties: {
+                        name: {
+                          description: "Name of this variable.",
+                          type: "string",
+                        },
+                        tenantId: {
+                          allOf: [
+                            {
+                              example: "customer-service",
+                              description:
+                                "The unique identifier of the tenant.",
+                              format: "TenantId",
+                              type: "string",
+                              title: "TenantId",
+                            },
+                          ],
+                          description: "Tenant ID of this variable.",
+                        },
+                        variableKey: {
+                          allOf: [
+                            {
+                              description:
+                                "System-generated key for a variable.",
+                              format: "VariableKey",
+                              example: "2251799813683287",
+                              type: "string",
+                              allOf: [
+                                {
+                                  description:
+                                    "Zeebe Engine resource key (Java long serialized as string)",
+                                  type: "string",
+                                  title: "LongKey",
+                                },
+                              ],
+                              title: "VariableKey",
+                            },
+                          ],
+                          description: "The key for this variable.",
+                        },
+                        scopeKey: {
+                          allOf: [
+                            {
+                              description:
+                                "System-generated key for a scope. A scope can hold variables and represents either an\nelement instance in a BPMN process or the process instance itself.\n",
+                              type: "string",
+                              format: "ScopeKey",
+                              oneOf: [
+                                {
+                                  description:
+                                    "System-generated key for a process instance.",
+                                  format: "ProcessInstanceKey",
+                                  example: "2251799813690746",
+                                  type: "string",
+                                  allOf: [
+                                    {
+                                      description:
+                                        "Zeebe Engine resource key (Java long serialized as string)",
+                                      type: "string",
+                                      title: "LongKey",
+                                    },
+                                  ],
+                                  title: "ProcessInstanceKey",
+                                },
+                                {
+                                  description:
+                                    "System-generated key for a element instance.",
+                                  format: "ElementInstanceKey",
+                                  example: "2251799813686789",
+                                  type: "string",
+                                  allOf: [
+                                    {
+                                      description:
+                                        "Zeebe Engine resource key (Java long serialized as string)",
+                                      type: "string",
+                                      title: "LongKey",
+                                    },
+                                  ],
+                                  title: "ElementInstanceKey",
+                                },
+                              ],
+                              title: "ScopeKey",
+                            },
+                          ],
+                          description:
+                            "The key of the scope where this variable is directly defined. For process-level\nvariables, this is the process instance key. For local variables, this is the key of the\nspecific element instance (task, subprocess, gateway, event, etc.) where the variable is\ndirectly defined.\n",
+                        },
+                        processInstanceKey: {
+                          allOf: [
+                            {
+                              description:
+                                "System-generated key for a process instance.",
+                              format: "ProcessInstanceKey",
+                              example: "2251799813690746",
+                              type: "string",
+                              allOf: [
+                                {
+                                  description:
+                                    "Zeebe Engine resource key (Java long serialized as string)",
+                                  type: "string",
+                                  title: "LongKey",
+                                },
+                              ],
+                              title: "ProcessInstanceKey",
+                            },
+                          ],
+                          description:
+                            "The key of the process instance of this variable.",
+                        },
+                        rootProcessInstanceKey: {
+                          description:
+                            "The key of the root process instance. The root process instance is the top-level\nancestor in the process instance hierarchy. This field is only present for data\nbelonging to process instance hierarchies created in version 8.9 or later.\n",
+                          nullable: true,
+                          allOf: [
+                            {
+                              description:
+                                "System-generated key for a process instance.",
+                              format: "ProcessInstanceKey",
+                              example: "2251799813690746",
+                              type: "string",
+                              allOf: [
+                                {
+                                  description:
+                                    "Zeebe Engine resource key (Java long serialized as string)",
+                                  type: "string",
+                                  title: "LongKey",
+                                },
+                              ],
+                              title: "ProcessInstanceKey",
+                            },
+                          ],
+                          "x-added-in-version": "8.9",
+                        },
+                      },
+                      title: "VariableResultBase",
+                    },
+                  ],
+                  properties: {
+                    value: {
+                      description: "Value of this variable. Can be truncated.",
+                      type: "string",
+                    },
+                    isTruncated: {
+                      description: "Whether the value is truncated or not.",
+                      type: "boolean",
+                    },
+                  },
+                  title: "VariableSearchResult",
+                },
+              },
+            },
+            title: "VariableSearchQueryResult",
+          },
+        },
+      },
+    },
+    "400": {
+      description: "The provided data is not valid.",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            required: ["type", "title", "status", "detail", "instance"],
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example:
+                  "https://docs.camunda.io/api/v2.0/problem-types/bad-request",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri-reference",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+    "401": {
+      description: "The request lacks valid authentication credentials.",
+      headers: { "WWW-Authenticate": { schema: { type: "string" } } },
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            required: ["type", "title", "status", "detail", "instance"],
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example:
+                  "https://docs.camunda.io/api/v2.0/problem-types/bad-request",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri-reference",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+    "403": {
+      description: "Forbidden. The request is not allowed.",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            required: ["type", "title", "status", "detail", "instance"],
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example:
+                  "https://docs.camunda.io/api/v2.0/problem-types/bad-request",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri-reference",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+    "500": {
+      description: "An internal error occurred while processing the request.",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            required: ["type", "title", "status", "detail", "instance"],
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example:
+                  "https://docs.camunda.io/api/v2.0/problem-types/bad-request",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri-reference",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+  }}
+></StatusCodes>

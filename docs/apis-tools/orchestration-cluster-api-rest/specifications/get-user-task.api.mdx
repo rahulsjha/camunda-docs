@@ -1,0 +1,665 @@
+---
+id: get-user-task
+title: "Get user task"
+sidebar_label: "Get user task"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: docs/apis-tools/orchestration-cluster-api-rest/specifications/orchestration-cluster-api
+custom_edit_url: null
+hide_send_button: true
+---
+
+import MarkerRequiredPermissions from "@site/src/mdx/MarkerRequiredPermissions";
+
+import MarkerScope from "@site/src/mdx/MarkerScope";
+
+import MarkerAddedInVersion from "@site/src/mdx/MarkerAddedInVersion";
+
+import MarkerEventuallyConsistentExtension from "@site/src/mdx/MarkerEventuallyConsistentExtension";
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading as={"h1"} className={"openapi__heading"}>
+  {"Get user task"} <MarkerAddedInVersion version="8.8" />{" "}
+  <MarkerScope scope="physical-tenant" />
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/user-tasks/{userTaskKey}"}
+  context={"endpoint"}
+></MethodEndpoint>
+
+<MarkerEventuallyConsistentExtension />
+
+Get the user task by the user task key.
+
+<MarkerRequiredPermissions
+  permissions={[
+    {
+      anyOf: [
+        {
+          resourceType: "PROCESS_DEFINITION",
+          permissionType: "READ_USER_TASK",
+        },
+        { resourceType: "USER_TASK", permissionType: "READ" },
+      ],
+    },
+  ]}
+/>
+
+<Heading id={"request"} as={"h2"} className={"openapi-tabs__heading"}>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[
+    {
+      name: "userTaskKey",
+      in: "path",
+      required: true,
+      description: "The user task key.",
+      schema: {
+        type: "string",
+        format: "string<UserTaskKey>",
+        description: "System-generated key for a user task.",
+      },
+    },
+  ]}
+></ParamsDetails>
+
+<RequestSchema title={"Body"} body={undefined}></RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{
+    "200": {
+      description: "The user task is successfully returned.",
+      content: {
+        "application/json": {
+          schema: {
+            type: "object",
+            required: [
+              "tenantId",
+              "userTaskKey",
+              "name",
+              "processInstanceKey",
+              "rootProcessInstanceKey",
+              "businessId",
+              "processDefinitionKey",
+              "elementInstanceKey",
+              "processDefinitionId",
+              "processName",
+              "state",
+              "candidateGroups",
+              "candidateUsers",
+              "elementId",
+              "creationDate",
+              "customHeaders",
+              "priority",
+              "isSuspended",
+              "tags",
+              "assignee",
+              "completionDate",
+              "dueDate",
+              "externalFormReference",
+              "followUpDate",
+              "processDefinitionVersion",
+              "formKey",
+            ],
+            properties: {
+              name: {
+                nullable: true,
+                type: "string",
+                description: "The name for this user task.",
+              },
+              state: {
+                description:
+                  "The state of the user task.\nNote: FAILED state is only for legacy job-worker-based tasks.\n",
+                type: "string",
+                enum: [
+                  "CREATING",
+                  "CREATED",
+                  "ASSIGNING",
+                  "UPDATING",
+                  "COMPLETING",
+                  "COMPLETED",
+                  "CANCELING",
+                  "CANCELED",
+                  "FAILED",
+                ],
+                title: "UserTaskStateEnum",
+              },
+              assignee: {
+                nullable: true,
+                description: "The assignee of the user task.",
+                type: "string",
+              },
+              elementId: {
+                description: "The element ID of the user task.",
+                allOf: [
+                  {
+                    description: "The model-defined id of an element.",
+                    format: "ElementId",
+                    type: "string",
+                    example: "Activity_106kosb",
+                    title: "ElementId",
+                  },
+                ],
+              },
+              candidateGroups: {
+                type: "array",
+                description: "The candidate groups for this user task.",
+                items: { type: "string" },
+              },
+              candidateUsers: {
+                type: "array",
+                description: "The candidate users for this user task.",
+                items: { type: "string" },
+              },
+              processDefinitionId: {
+                allOf: [
+                  {
+                    description:
+                      "Id of a process definition, from the model. Only ids of process definitions that are deployed are useful.",
+                    format: "ProcessDefinitionId",
+                    type: "string",
+                    example: "new-account-onboarding-workflow",
+                    title: "ProcessDefinitionId",
+                  },
+                ],
+                description: "The ID of the process definition.",
+              },
+              creationDate: {
+                type: "string",
+                description: "The creation date of a user task.",
+                format: "date-time",
+              },
+              completionDate: {
+                description: "The completion date of a user task.",
+                nullable: true,
+                type: "string",
+                format: "date-time",
+              },
+              followUpDate: {
+                description: "The follow date of a user task.",
+                nullable: true,
+                type: "string",
+                format: "date-time",
+              },
+              dueDate: {
+                description: "The due date of a user task.",
+                nullable: true,
+                type: "string",
+                format: "date-time",
+              },
+              tenantId: {
+                example: "customer-service",
+                description: "The unique identifier of the tenant.",
+                format: "TenantId",
+                type: "string",
+                title: "TenantId",
+              },
+              externalFormReference: {
+                description: "The external form reference.",
+                nullable: true,
+                type: "string",
+              },
+              processDefinitionVersion: {
+                type: "integer",
+                description: "The version of the process definition.",
+                format: "int32",
+              },
+              customHeaders: {
+                type: "object",
+                description: "Custom headers for the user task.",
+                additionalProperties: { type: "string" },
+              },
+              priority: {
+                type: "integer",
+                description:
+                  "The priority of a user task. The higher the value the higher the priority.",
+                minimum: 0,
+                maximum: 100,
+                default: 50,
+              },
+              isSuspended: {
+                type: "boolean",
+                description:
+                  "Whether the user task is suspended because its owning process instance is suspended.\n",
+                "x-added-in-version": "8.11",
+              },
+              userTaskKey: {
+                allOf: [
+                  {
+                    description: "System-generated key for a user task.",
+                    format: "UserTaskKey",
+                    type: "string",
+                    allOf: [
+                      {
+                        description:
+                          "Zeebe Engine resource key (Java long serialized as string)",
+                        type: "string",
+                        title: "LongKey",
+                      },
+                    ],
+                    title: "UserTaskKey",
+                  },
+                ],
+                description: "The key of the user task.",
+              },
+              elementInstanceKey: {
+                allOf: [
+                  {
+                    description: "System-generated key for a element instance.",
+                    format: "ElementInstanceKey",
+                    example: "2251799813686789",
+                    type: "string",
+                    allOf: [
+                      {
+                        description:
+                          "Zeebe Engine resource key (Java long serialized as string)",
+                        type: "string",
+                        title: "LongKey",
+                      },
+                    ],
+                    title: "ElementInstanceKey",
+                  },
+                ],
+                description: "The key of the element instance.",
+              },
+              processName: {
+                type: "string",
+                description:
+                  "The name of the process definition.\nThis is `null` if the process has no name defined.\n",
+                nullable: true,
+              },
+              processDefinitionKey: {
+                allOf: [
+                  {
+                    description:
+                      "System-generated key for a deployed process definition.",
+                    format: "ProcessDefinitionKey",
+                    example: "2251799813686749",
+                    type: "string",
+                    allOf: [
+                      {
+                        description:
+                          "Zeebe Engine resource key (Java long serialized as string)",
+                        type: "string",
+                        title: "LongKey",
+                      },
+                    ],
+                    title: "ProcessDefinitionKey",
+                  },
+                ],
+                description: "The key of the process definition.",
+              },
+              processInstanceKey: {
+                allOf: [
+                  {
+                    description: "System-generated key for a process instance.",
+                    format: "ProcessInstanceKey",
+                    example: "2251799813690746",
+                    type: "string",
+                    allOf: [
+                      {
+                        description:
+                          "Zeebe Engine resource key (Java long serialized as string)",
+                        type: "string",
+                        title: "LongKey",
+                      },
+                    ],
+                    title: "ProcessInstanceKey",
+                  },
+                ],
+                description: "The key of the process instance.",
+              },
+              rootProcessInstanceKey: {
+                description:
+                  "The key of the root process instance. The root process instance is the top-level\nancestor in the process instance hierarchy. This field is only present for data\nbelonging to process instance hierarchies created in version 8.9 or later.\n",
+                nullable: true,
+                allOf: [
+                  {
+                    description: "System-generated key for a process instance.",
+                    format: "ProcessInstanceKey",
+                    example: "2251799813690746",
+                    type: "string",
+                    allOf: [
+                      {
+                        description:
+                          "Zeebe Engine resource key (Java long serialized as string)",
+                        type: "string",
+                        title: "LongKey",
+                      },
+                    ],
+                    title: "ProcessInstanceKey",
+                  },
+                ],
+                "x-added-in-version": "8.9",
+              },
+              businessId: {
+                description:
+                  "The business ID of the owning process instance, inherited when the user task was\ncreated. This is `null` for user tasks created before version 8.10, and for user tasks\nwhose owning process instance has no business ID.\n",
+                nullable: true,
+                allOf: [
+                  {
+                    description:
+                      "An optional, user-defined string identifier that identifies the process instance\nwithin the scope of a process definition (scoped by tenant). If provided and uniqueness\nenforcement is enabled, the engine will reject creation if another root process instance\nwith the same business id is already active for the same process definition.\nNote that any active child process instances with the same business id are not taken into account.\n",
+                    format: "BusinessId",
+                    type: "string",
+                    example: "order-12345",
+                    title: "BusinessId",
+                  },
+                ],
+                "x-added-in-version": "8.10",
+              },
+              formKey: {
+                description: "The key of the form.",
+                nullable: true,
+                allOf: [
+                  {
+                    description: "System-generated key for a deployed form.",
+                    format: "FormKey",
+                    example: "2251799813684365",
+                    type: "string",
+                    allOf: [
+                      {
+                        description:
+                          "Zeebe Engine resource key (Java long serialized as string)",
+                        type: "string",
+                        title: "LongKey",
+                      },
+                    ],
+                    title: "FormKey",
+                  },
+                ],
+              },
+              tags: {
+                description:
+                  "List of tags. Tags need to start with a letter; then alphanumerics, `_`, `-`, `:`, or `.`; length ≤ 100.",
+                type: "array",
+                format: "string<Tag>[]",
+                example: ["high-touch", "remediation"],
+                items: {
+                  description:
+                    "A tag. Needs to start with a letter; then alphanumerics, `_`, `-`, `:`, or `.`; length ≤ 100.",
+                  example: "business_key:1234",
+                  format: "Tag",
+                  type: "string",
+                  title: "Tag",
+                },
+                uniqueItems: true,
+                maxItems: 10,
+                title: "TagSet",
+                "x-added-in-version": "8.9",
+              },
+            },
+            title: "UserTaskResult",
+          },
+        },
+      },
+    },
+    "400": {
+      description: "The provided data is not valid.",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            required: ["type", "title", "status", "detail", "instance"],
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example:
+                  "https://docs.camunda.io/api/v2.0/problem-types/bad-request",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri-reference",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+    "401": {
+      description: "The request lacks valid authentication credentials.",
+      headers: { "WWW-Authenticate": { schema: { type: "string" } } },
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            required: ["type", "title", "status", "detail", "instance"],
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example:
+                  "https://docs.camunda.io/api/v2.0/problem-types/bad-request",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri-reference",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+    "403": {
+      description: "Forbidden. The request is not allowed.",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            required: ["type", "title", "status", "detail", "instance"],
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example:
+                  "https://docs.camunda.io/api/v2.0/problem-types/bad-request",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri-reference",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+    "404": {
+      description: "The user task with the given key was not found.",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            required: ["type", "title", "status", "detail", "instance"],
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example:
+                  "https://docs.camunda.io/api/v2.0/problem-types/bad-request",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri-reference",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+    "500": {
+      description: "An internal error occurred while processing the request.",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            required: ["type", "title", "status", "detail", "instance"],
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example:
+                  "https://docs.camunda.io/api/v2.0/problem-types/bad-request",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri-reference",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+  }}
+></StatusCodes>

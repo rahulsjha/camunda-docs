@@ -1,0 +1,571 @@
+---
+id: get-job-type-statistics
+title: "Get job statistics by type"
+sidebar_label: "Get job statistics by type"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: versioned_docs/version-8.9/apis-tools/orchestration-cluster-api-rest/specifications/orchestration-cluster-api
+custom_edit_url: null
+hide_send_button: true
+---
+
+import MarkerAddedInVersion from "@site/src/mdx/MarkerAddedInVersion";
+
+import MarkerEventuallyConsistentExtension from "@site/src/mdx/MarkerEventuallyConsistentExtension";
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading as={"h1"} className={"openapi__heading"}>
+  {"Get job statistics by type"} <MarkerAddedInVersion version="8.9" />
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/jobs/statistics/by-types"}
+  context={"endpoint"}
+></MethodEndpoint>
+
+<MarkerEventuallyConsistentExtension />
+
+Get statistics about jobs, grouped by job type.
+
+<Heading id={"request"} as={"h2"} className={"openapi-tabs__heading"}>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails parameters={undefined}></ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{
+    required: true,
+    content: {
+      "application/json": {
+        schema: {
+          description: "Job type statistics query.",
+          type: "object",
+          properties: {
+            filter: {
+              description: "Job type statistics search filter.",
+              type: "object",
+              required: ["from", "to"],
+              properties: {
+                from: {
+                  description:
+                    "Start of the time window to filter metrics. ISO 8601 date-time format.\n",
+                  type: "string",
+                  format: "date-time",
+                  example: "2024-07-28T15:51:28.071Z",
+                },
+                to: {
+                  description:
+                    "End of the time window to filter metrics. ISO 8601 date-time format.\n",
+                  type: "string",
+                  format: "date-time",
+                  example: "2024-07-29T15:51:28.071Z",
+                },
+                jobType: {
+                  description:
+                    "Optional job type filter with advanced search capabilities.\nSupports exact match, pattern matching, and other operators.\n",
+                  allOf: [
+                    {
+                      description:
+                        "String property with full advanced search capabilities.",
+                      oneOf: [
+                        {
+                          type: "string",
+                          title: "Exact match",
+                          description: "Matches the value exactly.",
+                        },
+                        {
+                          title: "Advanced filter",
+                          description: "Advanced string filter.",
+                          allOf: [
+                            {
+                              title: "Advanced filter",
+                              description: "Basic advanced string filter.",
+                              type: "object",
+                              properties: {
+                                $eq: {
+                                  description:
+                                    "Checks for equality with the provided value.",
+                                  type: "string",
+                                },
+                                $neq: {
+                                  description:
+                                    "Checks for inequality with the provided value.",
+                                  type: "string",
+                                },
+                                $exists: {
+                                  description:
+                                    "Checks if the current property exists.",
+                                  type: "boolean",
+                                },
+                                $in: {
+                                  description:
+                                    "Checks if the property matches any of the provided values.",
+                                  type: "array",
+                                  items: { type: "string" },
+                                },
+                                $notIn: {
+                                  description:
+                                    "Checks if the property matches none of the provided values.",
+                                  type: "array",
+                                  items: { type: "string" },
+                                },
+                              },
+                            },
+                            {
+                              type: "object",
+                              properties: {
+                                $like: {
+                                  type: "string",
+                                  description:
+                                    "Checks if the property matches the provided like value.\n\nSupported wildcard characters are:\n\n* `*`: matches zero, one, or multiple characters.\n* `?`: matches one, single character.\n\nWildcard characters can be escaped with backslash, for instance: `\\*`.\n",
+                                  title: "LikeFilter",
+                                },
+                              },
+                            },
+                          ],
+                        },
+                      ],
+                      title: "StringFilterProperty",
+                    },
+                  ],
+                },
+              },
+              title: "JobTypeStatisticsFilter",
+            },
+            page: {
+              description: "Search cursor pagination.",
+              allOf: [
+                {
+                  type: "object",
+                  title: "Cursor-based forward pagination",
+                  required: ["after"],
+                  properties: {
+                    after: {
+                      description:
+                        "Use the `endCursor` value from the previous response to fetch the next page of results.",
+                      allOf: [
+                        {
+                          description:
+                            "The end cursor in a search query result set.",
+                          format: "base64",
+                          type: "string",
+                          example: "WzIyNTE3OTk4MTM2ODcxMDJd",
+                          title: "EndCursor",
+                        },
+                      ],
+                    },
+                    limit: {
+                      description:
+                        "The maximum number of items to return in one request.",
+                      type: "integer",
+                      format: "int32",
+                      default: 100,
+                      minimum: 0,
+                      maximum: 10000,
+                    },
+                  },
+                },
+              ],
+            },
+          },
+          title: "JobTypeStatisticsQuery",
+        },
+      },
+    },
+  }}
+></RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{
+    "200": {
+      description: "The job type statistics result.",
+      content: {
+        "application/json": {
+          schema: {
+            description: "Job type statistics query result.",
+            type: "object",
+            required: ["items"],
+            allOf: [
+              {
+                type: "object",
+                required: ["page"],
+                properties: {
+                  page: {
+                    description:
+                      "Pagination information about the search results.",
+                    type: "object",
+                    required: [
+                      "totalItems",
+                      "hasMoreTotalItems",
+                      "startCursor",
+                      "endCursor",
+                    ],
+                    properties: {
+                      totalItems: {
+                        description: "Total items matching the criteria.",
+                        type: "integer",
+                        format: "int64",
+                      },
+                      hasMoreTotalItems: {
+                        description:
+                          "Indicates whether the `totalItems` value has been capped due to system limits. When true, `totalItems` is a lower bound and the actual number of matching items is greater than the reported value.\n",
+                        type: "boolean",
+                      },
+                      startCursor: {
+                        description:
+                          "The cursor value for getting the previous page of results. Use this in the `before` field of an ensuing request.",
+                        nullable: true,
+                        allOf: [
+                          {
+                            description:
+                              "The start cursor in a search query result set.",
+                            format: "base64",
+                            type: "string",
+                            example: "WzIyNTE3OTk4MTM2ODcxMDJd",
+                            title: "StartCursor",
+                          },
+                        ],
+                      },
+                      endCursor: {
+                        description:
+                          "The cursor value for getting the next page of results. Use this in the `after` field of an ensuing request.",
+                        nullable: true,
+                        allOf: [
+                          {
+                            description:
+                              "The end cursor in a search query result set.",
+                            format: "base64",
+                            type: "string",
+                            example: "WzIyNTE3OTk4MTM2ODcxMDJd",
+                            title: "EndCursor",
+                          },
+                        ],
+                      },
+                    },
+                    title: "SearchQueryPageResponse",
+                  },
+                },
+                title: "SearchQueryResponse",
+              },
+            ],
+            properties: {
+              items: {
+                description: "The list of job type statistics items.",
+                type: "array",
+                items: {
+                  description: "Statistics for a single job type.",
+                  type: "object",
+                  required: [
+                    "jobType",
+                    "created",
+                    "completed",
+                    "failed",
+                    "workers",
+                  ],
+                  properties: {
+                    jobType: {
+                      description: "The job type identifier.",
+                      type: "string",
+                      example: "fetch-customer-data",
+                    },
+                    created: {
+                      description: "Metric for a single job status.",
+                      type: "object",
+                      required: ["count", "lastUpdatedAt"],
+                      properties: {
+                        count: {
+                          description: "Number of jobs in this status.",
+                          type: "integer",
+                          format: "int64",
+                          example: 145,
+                        },
+                        lastUpdatedAt: {
+                          description:
+                            "ISO 8601 timestamp of the last update for this status.",
+                          nullable: true,
+                          type: "string",
+                          format: "date-time",
+                          example: "2024-07-29T15:51:28.071Z",
+                        },
+                      },
+                      title: "StatusMetric",
+                    },
+                    completed: {
+                      description: "Metric for a single job status.",
+                      type: "object",
+                      required: ["count", "lastUpdatedAt"],
+                      properties: {
+                        count: {
+                          description: "Number of jobs in this status.",
+                          type: "integer",
+                          format: "int64",
+                          example: 145,
+                        },
+                        lastUpdatedAt: {
+                          description:
+                            "ISO 8601 timestamp of the last update for this status.",
+                          nullable: true,
+                          type: "string",
+                          format: "date-time",
+                          example: "2024-07-29T15:51:28.071Z",
+                        },
+                      },
+                      title: "StatusMetric",
+                    },
+                    failed: {
+                      description: "Metric for a single job status.",
+                      type: "object",
+                      required: ["count", "lastUpdatedAt"],
+                      properties: {
+                        count: {
+                          description: "Number of jobs in this status.",
+                          type: "integer",
+                          format: "int64",
+                          example: 145,
+                        },
+                        lastUpdatedAt: {
+                          description:
+                            "ISO 8601 timestamp of the last update for this status.",
+                          nullable: true,
+                          type: "string",
+                          format: "date-time",
+                          example: "2024-07-29T15:51:28.071Z",
+                        },
+                      },
+                      title: "StatusMetric",
+                    },
+                    workers: {
+                      description:
+                        "Number of distinct workers observed for this job type.",
+                      type: "integer",
+                      format: "int32",
+                      example: 5,
+                    },
+                  },
+                  title: "JobTypeStatisticsItem",
+                },
+              },
+            },
+            title: "JobTypeStatisticsQueryResult",
+          },
+        },
+      },
+    },
+    "400": {
+      description: "The provided data is not valid.",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            required: ["type", "title", "status", "detail", "instance"],
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example:
+                  "https://docs.camunda.io/api/v2.0/problem-types/bad-request",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri-reference",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+    "401": {
+      description: "The request lacks valid authentication credentials.",
+      headers: { "WWW-Authenticate": { schema: { type: "string" } } },
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            required: ["type", "title", "status", "detail", "instance"],
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example:
+                  "https://docs.camunda.io/api/v2.0/problem-types/bad-request",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri-reference",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+    "403": {
+      description: "Forbidden. The request is not allowed.",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            required: ["type", "title", "status", "detail", "instance"],
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example:
+                  "https://docs.camunda.io/api/v2.0/problem-types/bad-request",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri-reference",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+    "500": {
+      description: "An internal error occurred while processing the request.",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            required: ["type", "title", "status", "detail", "instance"],
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example:
+                  "https://docs.camunda.io/api/v2.0/problem-types/bad-request",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri-reference",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+  }}
+></StatusCodes>

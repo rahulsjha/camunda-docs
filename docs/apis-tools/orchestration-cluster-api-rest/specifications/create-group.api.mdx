@@ -1,0 +1,450 @@
+---
+id: create-group
+title: "Create group"
+sidebar_label: "Create group"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: docs/apis-tools/orchestration-cluster-api-rest/specifications/orchestration-cluster-api
+custom_edit_url: null
+hide_send_button: true
+---
+
+import MarkerRequiredPermissions from "@site/src/mdx/MarkerRequiredPermissions";
+
+import MarkerScope from "@site/src/mdx/MarkerScope";
+
+import MarkerAddedInVersion from "@site/src/mdx/MarkerAddedInVersion";
+
+import MarkerStronglyConsistentExtension from "@site/src/mdx/MarkerStronglyConsistentExtension";
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading as={"h1"} className={"openapi__heading"}>
+  {"Create group"} <MarkerAddedInVersion version="8.8" />{" "}
+  <MarkerScope scope="physical-tenant" />
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/groups"}
+  context={"endpoint"}
+></MethodEndpoint>
+
+<MarkerStronglyConsistentExtension />
+
+Create a new group.
+
+The supplied `groupId` is validated against `^[a-zA-Z0-9_~@.+-]+$`
+(max 256 characters) by `IdentifierValidator.validateId` in the
+runtime. This strict validation applies wherever the Groups API
+is available: in OIDC deployments that set
+`camunda.security.authentication.oidc.groupsClaim` the Groups
+API (including this endpoint) is disabled entirely, so group
+CRUD never sees externally-minted IdP IDs. The BYOG relaxation
+only loosens validation when a group is referenced _as a member_
+of a role or tenant (`assignRoleToGroup`,
+`assignGroupToTenant`); group CRUD itself always uses the strict
+default-id regex. The constraint is not advertised on the
+`GroupId` schema so that the same schema can be reused at
+member-reference sites without falsely rejecting
+externally-minted IdP group IDs there.
+
+<MarkerRequiredPermissions
+  permissions={[{ resourceType: "GROUP", permissionType: "CREATE" }]}
+/>
+
+<Heading id={"request"} as={"h2"} className={"openapi-tabs__heading"}>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails parameters={undefined}></ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{
+    content: {
+      "application/json": {
+        schema: {
+          type: "object",
+          properties: {
+            groupId: {
+              allOf: [
+                {
+                  example: "engineering",
+                  description: "The unique identifier of a group.",
+                  format: "GroupId",
+                  type: "string",
+                  title: "GroupId",
+                },
+              ],
+              description: "The ID of the new group.",
+            },
+            name: {
+              type: "string",
+              description: "The display name of the new group.",
+            },
+            description: {
+              type: "string",
+              description: "The description of the new group.",
+            },
+          },
+          required: ["groupId", "name"],
+          title: "GroupCreateRequest",
+        },
+      },
+    },
+  }}
+></RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{
+    "201": {
+      description: "The group was created successfully.",
+      content: {
+        "application/json": {
+          schema: {
+            type: "object",
+            properties: {
+              groupId: {
+                allOf: [
+                  {
+                    example: "engineering",
+                    description: "The unique identifier of a group.",
+                    format: "GroupId",
+                    type: "string",
+                    title: "GroupId",
+                  },
+                ],
+                description: "The ID of the created group.",
+              },
+              name: {
+                description: "The display name of the created group.",
+                type: "string",
+              },
+              description: {
+                description: "The description of the created group.",
+                nullable: true,
+                type: "string",
+              },
+            },
+            required: ["groupId", "name", "description"],
+            title: "GroupCreateResult",
+          },
+        },
+      },
+    },
+    "400": {
+      description: "The provided data is not valid.",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            required: ["type", "title", "status", "detail", "instance"],
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example:
+                  "https://docs.camunda.io/api/v2.0/problem-types/bad-request",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri-reference",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+    "401": {
+      description: "The request lacks valid authentication credentials.",
+      headers: { "WWW-Authenticate": { schema: { type: "string" } } },
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            required: ["type", "title", "status", "detail", "instance"],
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example:
+                  "https://docs.camunda.io/api/v2.0/problem-types/bad-request",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri-reference",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+    "403": {
+      description: "Forbidden. The request is not allowed.",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            required: ["type", "title", "status", "detail", "instance"],
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example:
+                  "https://docs.camunda.io/api/v2.0/problem-types/bad-request",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri-reference",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+    "409": {
+      description: "Group with this id already exists.",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            required: ["type", "title", "status", "detail", "instance"],
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example:
+                  "https://docs.camunda.io/api/v2.0/problem-types/bad-request",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri-reference",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+    "500": {
+      description: "An internal error occurred while processing the request.",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            required: ["type", "title", "status", "detail", "instance"],
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example:
+                  "https://docs.camunda.io/api/v2.0/problem-types/bad-request",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri-reference",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+    "503": {
+      description:
+        "The service is currently unavailable. This may happen only on some requests where the system creates backpressure to prevent the server's compute resources from being exhausted, avoiding more severe failures. In this case, the title of the error object contains `RESOURCE_EXHAUSTED`. Clients are recommended to eventually retry those requests after a backoff period. You can learn more about the backpressure mechanism here: https://docs.camunda.io/docs/components/zeebe/technical-concepts/internal-processing/#handling-backpressure .\n",
+      content: {
+        "application/problem+json": {
+          schema: {
+            description:
+              "A Problem detail object as described in [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457). There may be additional properties specific to the problem type.\n",
+            type: "object",
+            required: ["type", "title", "status", "detail", "instance"],
+            properties: {
+              type: {
+                type: "string",
+                format: "uri",
+                description: "A URI identifying the problem type.",
+                default: "about:blank",
+                example:
+                  "https://docs.camunda.io/api/v2.0/problem-types/bad-request",
+              },
+              title: {
+                type: "string",
+                description: "A summary of the problem type.",
+                example: "Bad Request",
+              },
+              status: {
+                type: "integer",
+                format: "int32",
+                description: "The HTTP status code for this problem.",
+                example: 400,
+                minimum: 400,
+                maximum: 600,
+              },
+              detail: {
+                type: "string",
+                description: "An explanation of the problem in more detail.",
+                example:
+                  "Request property [maxJobsToActivates] cannot be parsed",
+              },
+              instance: {
+                type: "string",
+                format: "uri-reference",
+                description:
+                  "A URI path identifying the origin of the problem.",
+                example: "/v2/jobs/activation",
+              },
+            },
+            title: "ProblemDetail",
+          },
+        },
+      },
+    },
+  }}
+></StatusCodes>
